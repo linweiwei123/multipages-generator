@@ -26,9 +26,9 @@ npm install multipages-generator -g
 
 ## 创建并运行📽
 
-步骤一：执行multipages-generator
+步骤一：执行multipages-generate
 ```bash
-multipages-generator
+multipages-generate
 
 ```
 步骤二：出现输入项目名提示，并输入您的项目名称
