@@ -1,0 +1,32 @@
+{
+  "name": "multipages-generator",
+  "version": "1.0.8",
+  "description": "generator for multipage webpack application template ,use express ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linweiwei123/multipage-generator.git"
+  },
+  "keywords": [
+    "mulipage",
+    "webpack",
+    "express",
+    "node.js",
+    "template"
+  ],
+  "bin": {
+    "multipages-generate": "./index.js"
+  },
+  "author": "linweiwei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linweiwei123/multipage-generator/issues"
+  },
+  "homepage": "https://github.com/linweiwei123/multipage-generator#readme",
+  "dependencies": {
+    "inquirer": "^5.1.0"
+  }
+}

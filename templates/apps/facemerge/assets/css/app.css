@@ -1,0 +1,70 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 12px;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 70vh;
+}
+.swiper-slide>img{
+    height: 100%;
+    width: 100%;
+}
+
+.btn{
+    text-align: center;
+    padding: 30px;
+}
+.btn button{
+    font-size: 24px;
+    padding: 5px 20px;
+    background-color: #FFD94A;
+    color: #fff;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #ddd;
+}
+
+.page{
+    height: 100%;
+    width: 100%;
+}
+
+#page2 {
+    display: none;
+}
+
+
+.uploadDist{
+    position: absolute;
+    top: 70vh;
+    left: 0;
+    right: 0;
+}
+
+.uploadDist input[type='file']{
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    left: 0;
+    height: 45px;
+    z-index: 99999;
+    opacity: 0;
+}
+
+#merge-content{
+    width: 100%;
+}
+
+#merge-content img{
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide{
+    width: 320px;
+}

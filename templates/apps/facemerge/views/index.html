@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>人脸融合</title>
+</head>
+<body>
+
+<!-- Slider main container -->
+<div id="page1" class="page">
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="../assets/imgs/1.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../assets/imgs/27.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../assets/imgs/25.png" alt="">
+            </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    <div class="btn">
+        <button id="ensure">确认模板</button>
+    </div>
+</div>
+
+<div id="page2" class="page">
+    <div id="merge-content"></div>
+    <div class="btn uploadDist">
+        <button id="upload">上传照片</button>
+        <input class="hide" type="file" id="img">
+    </div>
+</div>
+
+</body>
+</html>
