@@ -3,8 +3,6 @@ multipages-generator [![NPM version](https://badge.fury.io/js/multipages-generat
 
 [![NPM](https://nodei.co/npm/multipages-generator.png?downloads=true&stars=true)](https://nodei.co/npm/eventproxy)
 
-> 前端程序员，迟早屌遍天下！ —— [林伟伟](http://medium.yintage.com/)
-
 multipages-generator 🤡是一个像express-generator一样快速生成网站脚手架的npm模块，可以全局安装。只要一个命令即可生成多页面的express工程，是多页面webpack编译的最佳实践模板，最适合多个独立的移动端h5项目，有几个特点：
 
 1. 支持webpack编译多页面，可编译指定项目，也可编译全部项目
@@ -98,8 +96,7 @@ apps 目录下已有facemerge，voicemerge两个项目，新增一个项目xxx�
 
 The MIT License 请自由享受开源。
 
-## 我的其他文章
+## 部署相关参考
 <http://medium.yintage.com/>
 
-<http://www.yintage.com/>
 
