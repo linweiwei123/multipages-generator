@@ -86,6 +86,13 @@ apps 目录下已有facemerge，voicemerge两个项目，新增一个项目xxx�
 4. 生产编译上传七牛云OSS
 5. 文档更详细
 
+## Contribution 主要贡献者列表
+🐵
+林伟伟
+[戴炳泉](https://github.com/DBingo)
+[郭舒欣](https://github.com/uouin)
+🐵
+
 
 ## License
 
