@@ -41,7 +41,8 @@ function getMergeConfig(projectName){
                     use: {
                         loader: 'html-loader',
                         options: {
-                            attrs: [':data-src','img:src']
+                            attrs: [':data-src','img:src'],
+                            interpolate: true
                         }
                     }
                 },

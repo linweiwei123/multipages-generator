@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./bin/www",
-    "watch:facemerge": "rimraf public &&cross-env ENV=dev PROJECT_NAME=facemerge node ./tools/webpack.watch.js"
+    "watch:facemerge": "rimraf public &&cross-env ENV=dev PROJECT_NAME=facemerge node ./tools/webpack.watch.js",
+    "watch:viewport": "rimraf public &&cross-env ENV=dev PROJECT_NAME=viewport node ./tools/webpack.watch.js"
   },
   "dependencies": {
     "ali-oss": "^4.12.2",

@@ -15,6 +15,11 @@ router.get('/', function(req, res, next) {
   res.render('facemerge/index');
 });
 
+/* GET home page. */
+router.get('/viewport', function(req, res, next) {
+    res.render('viewport/index');
+});
+
 router.post('/upload',function(req,res){
 
     var form = new formidable.IncomingForm();
