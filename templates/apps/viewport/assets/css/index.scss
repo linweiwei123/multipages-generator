@@ -1,0 +1,17 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.line{
+    height: 200px;
+    border-bottom: 1px solid #000000;
+}
+
+.selector {
+    width: 150px;
+    height: 64px;
+    font-size: 28px; /*px*/
+    border: 1px solid #ddd; /*no*/
+}

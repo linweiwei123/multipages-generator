@@ -30,10 +30,20 @@ function getMergeConfig(projectName){
                 },
                 { test: /\.txt$/, use: 'raw-loader' },
                 {
-                    test: /\.css$/,
+                    test: /\.scss$/,
                     use: ExtractTextPlugin.extract({
                         fallback: "style-loader",
-                        use: "css-loader"
+                        use: [
+                            {
+                                loader: "css-loader"
+                            },
+                            {
+                                loader: 'postcss-loader'
+                            },
+                            {
+                                loader: "sass-loader"
+                            }
+                        ]
                     })
                 },
                 {
