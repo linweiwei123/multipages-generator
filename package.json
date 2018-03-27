@@ -30,6 +30,6 @@
     "inquirer": "^5.1.0"
   },
   "devDependencies": {
-    "postcss-viewport-units": "^0.1.4"
+
   }
 }

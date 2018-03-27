@@ -48,6 +48,7 @@
     "postcss-px-to-viewport": "0.0.3",
     "postcss-safe-parser": "^3.0.1",
     "postcss-write-svg": "github:jonathantneal/postcss-write-svg",
+    "postcss-viewport-units": "^0.1.4",
     "progress-bar-webpack-plugin": "^1.11.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
