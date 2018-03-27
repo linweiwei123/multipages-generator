@@ -33,7 +33,17 @@ function getMergeConfig(projectName){
                     test: /\.css$/,
                     use: ExtractTextPlugin.extract({
                         fallback: "style-loader",
-                        use: "css-loader"
+                        use: [
+                            {
+                                loader:'css-loader',
+                                options:{
+                                    importLoaders:1
+                                }
+                            },
+                            {
+                                loader:'postcss-loader'
+                            }
+                        ]
                     })
                 },
                 {

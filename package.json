@@ -28,5 +28,8 @@
   "homepage": "https://github.com/linweiwei123/multipage-generator#readme",
   "dependencies": {
     "inquirer": "^5.1.0"
+  },
+  "devDependencies": {
+    "postcss-viewport-units": "^0.1.4"
   }
 }

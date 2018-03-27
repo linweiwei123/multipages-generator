@@ -20,6 +20,11 @@ router.get('/viewport', function(req, res, next) {
     res.render('viewport/index');
 });
 
+/* GET home page. */
+router.get('/voicemerge', function(req, res, next) {
+    res.render('voicemerge/index');
+});
+
 router.post('/upload',function(req,res){
 
     var form = new formidable.IncomingForm();
