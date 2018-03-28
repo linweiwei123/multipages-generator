@@ -7,12 +7,20 @@ const { getProjectConfig } = require('./webpack.dypage');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
+const ENV = process.env.NODE_ENV;
+
+let publicPath = '/';
+if(ENV === 'production'){
+    publicPath = '//oflt40zxf.bkt.clouddn.com/';
+}
+
+
 function getMergeConfig(projectName){
     let dynamicConfig = getProjectConfig(projectName);
     return {
         entry: dynamicConfig.entry,
         output: {
-            publicPath: '/',
+            publicPath: publicPath,
             path: path.join(__dirname, '../public'),
             filename: 'js/[name].[hash].js'
         },
