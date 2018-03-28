@@ -81,9 +81,10 @@ apps 目录下已有facemerge，viewport两个项目，新增一个项目xxx，�
 启动方式跟上述 “开发模式启动项目facemerge” 相同
 
 ## 示例页面
-![image](http://ovn18u9yn.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180328152125.jpg)
+![image](http://ovn18u9yn.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180328152125.jpg?imageView2/1/w/375/h/667)
 
 查看DEMO用手机chrome，淘宝，微信等扫下二维码查看
+
 ![image](http://oflt40zxf.bkt.clouddn.com/865e0ff6c664e1b6a194b544ec3321eb.png)
 
 ## 未来计划😱
