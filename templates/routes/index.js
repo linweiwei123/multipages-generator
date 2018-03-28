@@ -12,12 +12,12 @@ var streamBuffers = require('stream-buffers');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('facemerge/index');
+    res.render('viewport/index');
 });
 
 /* GET home page. */
-router.get('/viewport', function(req, res, next) {
-    res.render('viewport/index');
+router.get('/facemerge', function(req, res, next) {
+    res.render('facemerge/index');
 });
 
 router.post('/upload',function(req,res){

@@ -15,10 +15,141 @@
 <meta http-equiv="cache-control" content="no-cache,no-store,must-revalidate"/>
 <meta name="format-detection" content="telephone=no,date=no,address=no,email=no">
 <script>!function(N,M){function L(){var a=I.getBoundingClientRect().width;a/F>540&&(a=540*F);var d=a/10;I.style.fontSize=d+"px",D.rem=N.rem=d}var K,J=N.document,I=J.documentElement,H=J.querySelector('meta[name="viewport"]'),G=J.querySelector('meta[name="flexible"]'),F=0,E=0,D=M.flexible||(M.flexible={});if(H){console.warn("将根据已有的meta标签来设置缩放比例");var C=H.getAttribute("content").match(/initial-scale=([d.]+)/);C&&(E=parseFloat(C[1]),F=parseInt(1/E))}else{if(G){var B=G.getAttribute("content");if(B){var A=B.match(/initial-dpr=([d.]+)/),z=B.match(/maximum-dpr=([d.]+)/);A&&(F=parseFloat(A[1]),E=parseFloat((1/F).toFixed(2))),z&&(F=parseFloat(z[1]),E=parseFloat((1/F).toFixed(2)))}}}if(!F&&!E){var y=N.navigator.userAgent,x=(!!y.match(/android/gi),!!y.match(/iphone/gi)),w=x&&!!y.match(/OS 9_3/),v=N.devicePixelRatio;F=x&&!w?v>=3&&(!F||F>=3)?3:v>=2&&(!F||F>=2)?2:1:1,E=1/F}if(I.setAttribute("data-dpr",F),!H){if(H=J.createElement("meta"),H.setAttribute("name","viewport"),H.setAttribute("content","initial-scale="+E+", maximum-scale="+E+", minimum-scale="+E+", user-scalable=no"),I.firstElementChild){I.firstElementChild.appendChild(H)}else{var u=J.createElement("div");u.appendChild(H),J.write(u.innerHTML)}}N.addEventListener("resize",function(){clearTimeout(K),K=setTimeout(L,300)},!1),N.addEventListener("pageshow",function(b){b.persisted&&(clearTimeout(K),K=setTimeout(L,300))},!1),"complete"===J.readyState?J.body.style.fontSize=12*F+"px":J.addEventListener("DOMContentLoaded",function(){J.body.style.fontSize=12*F+"px"},!1),L(),D.dpr=N.dpr=F,D.refreshRem=L,D.rem2px=function(d){var c=parseFloat(d)*this.rem;return"string"==typeof d&&d.match(/rem$/)&&(c+="px"),c},D.px2rem=function(d){var c=parseFloat(d)/this.rem;return"string"==typeof d&&d.match(/px$/)&&(c+="rem"),c}}(window,window.lib||(window.lib={}));</script>
-    <title>Title</title>
-<link href="/css/viewport.bc694fca0bbbfd9e5d21.css" rel="stylesheet"></head>
+    <title>美柚布局DEMO页面</title>
+<link href="/css/viewport.65846122d85b40693a5f.css" rel="stylesheet"></head>
 <body>
-        <div class="line"></div>
-        <div class="selector">马上抢！</div>
-<script type="text/javascript" src="/js/main.bc694fca0bbbfd9e5d21.js"></script></body>
+    <div class="header">MG最佳实践DEMO页面</div>
+    <div class="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="banner-img" src="/assets/1.9740b5ede89f808d674e68c65a6e71a3.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img class="banner-img" src="/assets/2.daf989ae4db5c9786a022295a1ad6f1b.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img class="banner-img" src="/assets/3.a9eaa36efb9f4ca36228e49c52ab0356.jpg" alt="">
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div class="category">
+        <div class="item">
+            <img src="/assets/jichi.5cefac9efd2e95bc4d82e00203f12972.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="/assets/jipai.23335cd2b3edbe31ad1a6ef2cad3c4d2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="/assets/shengdai.0c75de2c08bd32ce2f023d625fb4a4f6.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="/assets/jichi.5cefac9efd2e95bc4d82e00203f12972.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="/assets/jipai.23335cd2b3edbe31ad1a6ef2cad3c4d2.jpg" alt="">
+        </div>
+    </div>
+    <div class="category">
+        <div class="item">
+            <img src="/assets/shengdai.0c75de2c08bd32ce2f023d625fb4a4f6.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="/assets/jipai.23335cd2b3edbe31ad1a6ef2cad3c4d2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="/assets/shengdai.0c75de2c08bd32ce2f023d625fb4a4f6.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="/assets/jichi.5cefac9efd2e95bc4d82e00203f12972.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="/assets/jipai.23335cd2b3edbe31ad1a6ef2cad3c4d2.jpg" alt="">
+        </div>
+    </div>
+    <div class="list-section">
+        <div class="box">
+            <div class="box-image">
+                <img src="/assets/f1.3f0456bdd0cbb8e122940e4fd28267e9.jpg" alt="">
+            </div>
+            <div class="box-message">
+                <div class="pd-title">进口深海鳕鱼500g（精选）</div>
+                <div class="pd-sub-title">“还是个小孩就这么贪吃？”</div>
+                <div class="pd-option">
+                    <span class="pd-price">￥18.8/份</span>
+                    <span class="pd-card"><i class="mg-icon icon-cart">&#xe603;</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-image">
+                <img src="/assets/m1.70cbec82756db15166430b19749ba41c.jpg" alt="">
+            </div>
+            <div class="box-message">
+                <div class="pd-title">进口深海鳕鱼500g（精选）</div>
+                <div class="pd-sub-title">“还是个小孩就这么贪吃？”</div>
+                <div class="pd-option">
+                    <span class="pd-price">￥18.8/份</span>
+                    <span class="pd-card"><i class="mg-icon icon-cart">&#xe603;</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-image">
+                <img src="/assets/f1.3f0456bdd0cbb8e122940e4fd28267e9.jpg" alt="">
+            </div>
+            <div class="box-message">
+                <div class="pd-title">进口深海鳕鱼500g（精选）</div>
+                <div class="pd-sub-title">“还是个小孩就这么贪吃？”</div>
+                <div class="pd-option">
+                    <span class="pd-price">￥18.8/份</span>
+                    <span class="pd-card"><i class="mg-icon icon-cart">&#xe603;</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-image">
+                <img src="/assets/m1.70cbec82756db15166430b19749ba41c.jpg" alt="">
+            </div>
+            <div class="box-message">
+                <div class="pd-title">进口深海鳕鱼500g（精选）</div>
+                <div class="pd-sub-title">“还是个小孩就这么贪吃？”</div>
+                <div class="pd-option">
+                    <span class="pd-price">￥18.8/份</span>
+                    <span class="pd-card"><i class="mg-icon icon-cart">&#xe603;</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-image">
+                <img src="/assets/f1.3f0456bdd0cbb8e122940e4fd28267e9.jpg" alt="">
+            </div>
+            <div class="box-message">
+                <div class="pd-title">进口深海鳕鱼500g（精选）</div>
+                <div class="pd-sub-title">“还是个小孩就这么贪吃？”</div>
+                <div class="pd-option">
+                    <span class="pd-price">￥18.8/份</span>
+                    <span class="pd-card"><i class="mg-icon icon-cart">&#xe603;</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-image">
+                <img src="/assets/m1.70cbec82756db15166430b19749ba41c.jpg" alt="">
+            </div>
+            <div class="box-message">
+                <div class="pd-title">进口深海鳕鱼500g（精选）</div>
+                <div class="pd-sub-title">“还是个小孩就这么贪吃？”</div>
+                <div class="pd-option">
+                    <span class="pd-price">￥18.8/份</span>
+                    <span class="pd-card"><i class="mg-icon icon-cart">&#xe603;</i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="/js/main.65846122d85b40693a5f.js"></script></body>
 </html>
