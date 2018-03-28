@@ -3,6 +3,8 @@ multipages-generator [![NPM version](https://badge.fury.io/js/multipages-generat
 
 [![NPM](https://nodei.co/npm/multipages-generator.png?downloads=true&stars=true)](https://nodei.co/npm/eventproxy)
 
+> 前端程序员，迟早屌遍天下！ —— [林伟伟](http://medium.yintage.com/)
+
 multipages-generator 🤡是一个像express-generator一样快速生成网站脚手架的npm模块，可以全局安装。只要一个命令即可生成多页面的express工程，是多页面webpack编译的最佳实践模板，最适合多个独立的移动端h5项目，有几个特点：
 
 1. 支持webpack编译多页面，可编译指定项目，也可编译全部项目
@@ -12,7 +14,8 @@ multipages-generator 🤡是一个像express-generator一样快速生成网站�
 5. producton环境可配置生产的css,js,images自动编译后上传OSS服务器
 6. webpack编译后的html模板支持ejs等模板引擎
 7. 使用node.js做服务，nodemon热更新
-7. 支持pm2集群启动
+8. 支持pm2集群启动
+9. 🔥 (新) 加入[手淘flexible布局方案](https://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)，适配不同尺寸和DPI的屏幕，加入postcss支持
 
 ## 安装⚙️
 
@@ -62,7 +65,7 @@ multipages-generate
 这里为了让开发时更愉悦，启动了前端服务，具有热更新的性能，每次更新自动编译输出到express工程的对应目录中，项目部署时不需要启动；
 
 ## 新增一个项目
-apps 目录下已有facemerge，voicemerge两个项目，新增一个项目xxx，目录结构需参考facemerge
+apps 目录下已有facemerge，viewport两个项目，新增一个项目xxx，目录结构需参考facemerge
 ```bash
 ├─facemerge
 │  ├─assets
@@ -76,6 +79,12 @@ apps 目录下已有facemerge，voicemerge两个项目，新增一个项目xxx�
     "watch:facemerge": "rimraf public &&cross-env ENV=dev PROJECT_NAME=facemerge node ./tools/webpack.watch.js"
 ```
 启动方式跟上述 “开发模式启动项目facemerge” 相同
+
+## 示例页面
+![image](http://ovn18u9yn.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180328152125.jpg)
+
+查看DEMO用手机chrome，淘宝，微信等扫下二维码查看
+![image](http://oflt40zxf.bkt.clouddn.com/865e0ff6c664e1b6a194b544ec3321eb.png)
 
 ## 未来计划😱
 1. 案例demo页完善，做一个腾讯AI的人脸融合H5
@@ -96,7 +105,8 @@ apps 目录下已有facemerge，voicemerge两个项目，新增一个项目xxx�
 
 The MIT License 请自由享受开源。
 
-## 部署相关参考
+## 我的其他文章
 <http://medium.yintage.com/>
 
+<http://www.yintage.com/>
 
