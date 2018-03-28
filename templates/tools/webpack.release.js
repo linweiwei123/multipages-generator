@@ -32,4 +32,4 @@ webpacker.run((err,status)=>{
 
         qupload('./public')
     }
-})
+});

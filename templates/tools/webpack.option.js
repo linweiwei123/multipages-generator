@@ -6,12 +6,13 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { getProjectConfig } = require('./webpack.dypage');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const { cdnPath } = require('../mg.config');
 
 const ENV = process.env.NODE_ENV;
 
 let publicPath = '/';
 if(ENV === 'production'){
-    publicPath = '//oflt40zxf.bkt.clouddn.com/';
+    publicPath = cdnPath;
 }
 
 
