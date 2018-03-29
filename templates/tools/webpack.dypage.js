@@ -23,7 +23,8 @@ function getPlugins(projectName) {
             template: path.join(__dirname,`../apps/${projectName}/views/index.html`),
             filename: path.join(__dirname,`../views/${ENV}/${projectName}/index.html`)
         }),
-        new ExtractTextPlugin(`css/${projectName}.[hash].css`)
+        new ExtractTextPlugin(`css/${projectName}.[contenthash:20].css`)
+
     ];
     return plugins;
 }
