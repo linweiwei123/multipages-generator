@@ -1,7 +1,7 @@
-multipages-generator [![NPM version](https://badge.fury.io/js/multipages-generator.png)](http://badge.fury.io/js/eventproxy)
+multipages-generator [![NPM version](https://badge.fury.io/js/multipages-generator.png)](http://badge.fury.io/js/multipages-generator)
 ======
 
-[![NPM](https://nodei.co/npm/multipages-generator.png?downloads=true&stars=true)](https://nodei.co/npm/eventproxy)
+[![NPM](https://nodei.co/npm/multipages-generator.png?downloads=true&stars=true)](https://nodei.co/npm/multipages-generator)
 
 > 前端程序员，迟早屌遍天下！ —— [林伟伟](http://medium.yintage.com/)
 
@@ -97,7 +97,7 @@ apps 目录下已有facemerge，viewport两个项目，新增一个项目xxx，�
 
 查看DEMO用手机chrome，淘宝，微信等扫下二维码查看
 
-![image](http://oflt40zxf.bkt.clouddn.com/865e0ff6c664e1b6a194b544ec3321eb.png)
+![image](http://oflt40zxf.bkt.clouddn.com/1522288108.png)
 
 ## 配置
 MG是一个完整的H5网站解决方案，支持自动上传静态资源到CDN，支持Mysql，MongoDB，Redis数据库连接，支持webpack，postcss等，所以需要根据实际场景按需配置
