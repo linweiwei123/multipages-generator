@@ -67,7 +67,7 @@ multipages-generate
 ```
 四步骤之后，你默认的浏览器自动打开此页面（如果没有，手动访问localhost:2000）
 
-==注意，目前发现viewport例子的素材图片（在/apps/viewport/assets/imgs 目录下）经过全局安装会编码出问题。不影响运行，但是如果想看到上面的demo页面请从[我的网盘](https://pan.baidu.com/s/1GyIunAicYsS3dCtJx-9hkg) 下载素材图片，解压放到/apps/viewport/assets/imgs 目录下==
+==注意，目前发现viewport例子的素材图片（在/apps/viewport/assets/imgs 目录下）经过全局安装会编码出问题。不影响运行，但是如果想看到上面的demo页面请从[我的网盘](https://pan.baidu.com/s/1GyIunAicYsS3dCtJx-9hkg) 下载素材图片，解压放到/apps/viewport/assets/imgs 目录下全部替换那些出问题的图片==
 
 将来会选用更加适当的demo做演示
 
