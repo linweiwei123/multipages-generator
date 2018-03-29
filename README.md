@@ -20,6 +20,7 @@ multipages-generator （MG） 🤡是一个像express-generator一样快速生�
 
 
 ## Document
+* [支持的环境](#支持的环境)
 * [全局安装](#安装)
 * [跑起来！](#运行与开发)
 * [创建一个新项目](#新增一个项目)
@@ -30,6 +31,13 @@ multipages-generator （MG） 🤡是一个像express-generator一样快速生�
      * [阿里云OSS](#阿里云oss)
      * [其他CDN](#其他cdn)
 * [未来计划](#未来计划)
+
+## 支持的环境
+运行的环境要求
+
+node环境：node.js 6.11.0
+
+操作系统：支持 mac，windows，centos
 
 ## 安装 ⚙️
 
