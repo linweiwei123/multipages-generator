@@ -62,7 +62,7 @@ multipages-generate
 ```
     // 运行前端开发环境 以viewport为例子
     npm run watch:viewport
-    // 启动服务端 （新手注意，新开一个doc窗口，进入你的创建的工程名）
+    // 启动服务端 （新手注意，新开一个dos窗口，进入你的创建的工程名）
     npm run start
 ```
 四步骤之后，你默认的浏览器自动打开此页面（如果没有，手动访问localhost:2000）
