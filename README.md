@@ -9,13 +9,15 @@ multipages-generator （MG） 🤡是一个像express-generator一样快速生�
 
 1. 支持webpack编译多页面，可编译指定项目，也可编译全部项目
 2. 前端编译支持热更新
-3. 编译出的网页性能经过优化，符合最佳实践
-4. 支持development,test,producton环境区分
+3. 编译出的网页性能经过优化，符合最佳实践（还不完善，后面加入[淘宝性能优化的全部内容](https://github.com/amfe/article/issues/21)）
+4. 支持development,producton环境区分
 5. producton环境可配置生产的css,js,images自动编译后上传OSS服务器
 6. webpack编译后的html模板支持ejs等模板引擎
 7. 使用node.js做服务，nodemon热更新
 8. 支持pm2集群启动
 9. 🔥 (新) 加入[手淘flexible布局方案](https://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)，适配不同尺寸和DPI的屏幕，加入postcss支持
+10. 🔥 (新) 支持生产release模式，配置下七牛云CDN，编译后js，css，图片等资源文件上传cdn
+
 
 ## Document
 * [全局安装](#安装)
@@ -158,8 +160,8 @@ webpacker.run((err,status)=>{
 1. 案例demo页完善，做一个腾讯AI的人脸融合H5
 2. 加入mysql，mongoDB可选配置
 3. 生产环境配置更佳完善
-4. 生产编译上传七牛云OSS
-5. 文档更详细
+4. 文档更详细
+5. 性能优化加入手淘的全部方案，以及google的性能优化内容
 
 ## Contribution 主要贡献者列表
 🐵
