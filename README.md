@@ -184,14 +184,19 @@ webpacker.run((err,status)=>{
 ## Contribution 主要贡献者列表
 🐵
 林伟伟
+[吴俊川](https://github.com/wujunchuan)
 [戴炳泉](https://github.com/DBingo)
 [郭舒欣](https://github.com/uouin)
 🐵
+
+## 配套部署方案请参考
+[30分钟快速部署到云服务器上](http://medium.yintage.com/?p=248)
 
 
 ## License
 
 The MIT License 请自由享受开源。
+
 
 ## 我的其他文章
 <http://medium.yintage.com/>
