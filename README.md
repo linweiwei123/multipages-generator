@@ -7,6 +7,16 @@ multipages-generator [![NPM version](https://badge.fury.io/js/multipages-generat
 
 multipages-generator （MG） 🤡是一个像express-generator一样快速生成网站脚手架的npm模块，可以全局安装。只要一个命令即可生成多页面的express工程，是多页面webpack编译的最佳实践模板，最适合多个独立的移动端h5项目，有几个特点：
 
+## 适合场景
+如美柚，淘宝，今日头条，微信内分享的等独立的，小的h5，可以是广告，营销，活动，展示页，秀肌肉，好玩的h5，如[这些](http://www.ih5.cn/not-logged-in/template)。
+还有我们的例子：
+[美柚吃鸡游戏](https://uedkit.meiyou.com/annualmeeting/game/)
+
+## 优势是 什么？
+完整的h5解决方案，快速开发，自动完成性能优化（目前只是基本功能，未完持续，后面支持[google web 性能优化](https://developers.google.com/web/fundamentals/performance/why-performance-matters/)
+
+## 特点
+
 1. 支持webpack编译多页面，可编译指定项目，也可编译全部项目
 2. 前端编译支持热更新
 3. 编译出的网页性能经过优化，符合最佳实践（还不完善，后面加入[淘宝性能优化的全部内容](https://github.com/amfe/article/issues/21)）
