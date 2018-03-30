@@ -44,17 +44,19 @@ router.post('/upload',function(req,res){
         // 2、人脸融合
         qqAiSdk.faceMerge(1,'2',base64imagestr,model)
             .then((res)=>{
-
                 // 3、 输出base64格式的图，转换为buffer
                 let buffer = new Buffer(res.data.image, 'base64');
 
-                // 4、上传阿里云oss
-                return aliupload({
-                    deduplication: true,
-                    prefix: 'uedh5.seeyouyima.com/facemerge'
-                }, buffer, filename)
-                // 4、不上传阿里云oss
-                // return {url: "data:image/jpg;base64,"+res.data.image}
+                if(!fields.isupload){
+                    // 4、上传阿里云oss
+                    return aliupload({
+                        deduplication: true,
+                        prefix: 'uedh5.seeyouyima.com/facemerge'
+                    }, buffer, filename)
+                  }else{
+                    // 4、不上传阿里云oss
+                    return {url: "data:image/jpg;base64,"+res.data.image}
+                  }
             })
             .then(data => {
                 // 5、返回url

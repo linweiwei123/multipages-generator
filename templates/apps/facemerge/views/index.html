@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ${require('../../common/views/header.html')}
     <title>人脸融合</title>
 </head>
+<link href="//at.alicdn.com/t/font_492329_2fispfbmyceah5mi.css" rel="stylesheet">
 <body>
 
 <!-- Slider main container -->
+<input id="file" type="file" class="hide" accept="image/*" />
+
 <div id="page1" class="page">
     <div class="swiper-container">
         <!-- Additional required wrapper -->
@@ -15,13 +17,13 @@
 
             <!-- Slides -->
             <div class="swiper-slide">
-                <img src="../assets/imgs/1.png" alt="">
+                <img src="../assets/imgs/p1.png">
             </div>
             <div class="swiper-slide">
-                <img src="../assets/imgs/27.png" alt="">
+                <img src="../assets/imgs/p2.png">
             </div>
             <div class="swiper-slide">
-                <img src="../assets/imgs/25.png" alt="">
+                <img src="../assets/imgs/p3.png">
             </div>
         </div>
         <!-- If we need pagination -->
@@ -34,19 +36,61 @@
         <!-- If we need scrollbar -->
         <div class="swiper-scrollbar"></div>
     </div>
-
     <div class="btn">
         <button id="ensure">确认模板</button>
     </div>
+
+    <!-- 上传相机 -->
+
+ <div class="page-load-mask hide" id="showCamera">
+        <div style="display:table; width:100%; height:100%;">
+          <div style="display:table-row">
+            <div style="display:table-cell; vertical-align:middle;">
+              <div class="whiteblock tada" id="cameraWrap">
+                    <img src="../assets/imgs/close.png" alt="" class="close">
+                <span class="page-load-mask-img camera">&nbsp;</span>
+                <p class="page-load-mask-text">上传照片</p>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
 
 <div id="page2" class="page">
-    <div id="merge-content"></div>
-    <div class="btn uploadDist">
-        <button id="upload">上传照片</button>
-        <input class="hide" type="file" id="img">
+    <img id="creatImgCover" src="../assets/imgs/qr.png" border="0" alt="" />
+    <div class="btn">
+        <button id="refresh">重新制作</button>
     </div>
 </div>
+
+ 
+
+   <!-- 加载进度圈 -->
+
+ <div class="page-load-mask hide" id="load" ontouchstart="event.preventDefault();">
+        <div style="display:table; width:100%; height:100%;">
+          <div style="display:table-row">
+            <div style="display:table-cell; vertical-align:middle;">
+              <div class="greyblock">
+                <span class="page-load-mask-img scan">&nbsp;</span>
+              </div>
+              <br>
+              <span class="page-load-mask-text">&nbsp;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- toast -->
+
+  <div class="mzc-toast " ontap="$(this).removeClass('show')">
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
 
 </body>
 </html>

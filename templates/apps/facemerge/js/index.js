@@ -6,74 +6,157 @@ import '../assets/css/app.css';
 import '../assets/css/swiper.css';
 import Swiper from 'swiper';
 import $ from 'jquery';
+const tool = require('./tools.js');
+const minish = require('./minish.js');
 var { faceMerge } = require('qq-ai-sdk');
-
 var selectModel = 1;
 
+function showToast(text, desc) {
+    tool.showToast(text, desc);
+  }
+function getModel(index){
+    const modelArr = {
+        0:6891,
+        1:9,
+        2:6,
+    }
+    return modelArr[index];
+}
 $(document).ready(function () {
     var mySwiper = new Swiper ('.swiper-container', {
-        direction: 'horizontal',
         loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-        },
+        pagination: '.swiper-pagination',
+        slidesPerView: 1,
+        centeredSlides: true,
+        paginationClickable: true,
+        preventLinksPropagation: true,
+        lazyLoading: true,
+        lazyLoadingInPrevNext: true,
+        lazyLoadingInPrevNextAmount: 2,
+        spaceBetween: 30,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
+        on: {
+        slideChangeTransitionEnd: () => {
+            if ($('#ensure').hasClass('tada')) {
+              return;
+            }
+            $('#ensure').addClass('tada');
+            setTimeout(() => {
+              $('#ensure').removeClass('tada');
+            }, 500);
+          }
         },
     })
 
-    $("#ensure").click(function(){
-        selectModel = mySwiper.realIndex;
-        $("#page1").hide();
-        $("#page2").show();
-    })
+    $(".mzc-toast").click(function(e){
+        $(this).removeClass('show')
+    });
+    $("#ensure").click(function(e){
+        selectModel = getModel(mySwiper.realIndex);
+        $("#showCamera").removeClass('hide');
+    });
+    $("#refresh").click(function(e){
+        // document.querySelector('#creatImgCover').src = '';
+        $('#page2').hide();
+        $('#page1').show();
+        $("#showCamera").addClass('hide');
+    });
+    $("#cameraWrap").click(function(e){
+        e.target.className != 'close' ? 
+        $('#file').click()
+        :$("#showCamera").addClass('hide');
+    });
+    
+    fileInit();
+});
 
-    $('input[type=file]').change(function () {
-        var file = document.querySelector('#img').files[0];
-        var reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function () {
-            var base64ImageContent = reader.result.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
+
+const $file = $('#file');
+const maxSize = 500 * 1024;
+
+function fileInit() {
+    // 判断浏览器是否支持FileReader接口
+    if (typeof window.FileReader == 'undefined') {
+      showToast('你的浏览器版本太低！', '请更换浏览器再试试!');
+      $file[0].setAttribute('disabled', 'disabled');// 使选择控件不可操作
+      $('.chooseBtn').addClass('forbid');
+    }
+    $file[0].onchange = function () {
+      const file = this.files[0];
+  
+      tool.loadshow();
+      if (!file) {
+        tool.loadhide();
+        return false;
+      } else if(!/\image\/(png|jpg|jpeg)$/.test(file.type)){
+        showToast('请上传jpg或png格式图片');
+        tool.loadhide();
+        return false;
+      }
+      const reader = new window.FileReader();
+  
+      reader.readAsDataURL(file);
+      reader.onload = function (e) {
+        $file.val('');
+        let imgBase64 = reader.result;
+  
+        if (file.size > maxSize) {
+          minish.minish(imgBase64,function (Base64) {
+            imgBase64 = Base64;
+           up(imgBase64);
+          });
+        }else{
+          up(imgBase64);
+        }
+  
+        function up(imgBase64){
+            /*移除*/
+            tool.loadhide()
+            $('#page1').hide();
+            $('#page2').show();
+            showToast('请扫二维码获得更好体验');
+            $('#creatImgCover').css('height','80vw')
+            return            
+            /*移除*/
+
+            var base64ImageContent = imgBase64.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
             var blob = base64ToBlob(base64ImageContent, 'image/jpg');
             var formData = new FormData();
             formData.append('picture', blob);
-            formData.append('model', getModel(selectModel).toString());
-            let url = "http://localhost:10017/facemerge/upload";
+            formData.append('isupload', 1);//删除默认上传
+            formData.append('model', selectModel.toString());
             $.ajax({
-                url: url,
+                url: '/upload',
                 type: "POST",
                 cache: false,
                 dataType:'json',
                 contentType: false,
                 processData: false,
                 data: formData})
-                .done(function(res){
-                    console.log(res,typeof res);
-                    $("#merge-content").append(`<img class="merged-img" src="${res.data.url}" />`)
-                    console.log('done');
-                });
-
-        };
-        reader.onerror = function (error) {
-            console.log('Error: ', error);
-        };
-    });
-});
-
-function getModel(index){
-    switch (index){
-        case 0:return 1;
-        case 1:return 27;
-        case 2:return 25;
-        default:return 1;
-    }
-}
-
+            .done(function(res){                
+              console.log('mergeDone',res,typeof res);
+              $('#page1').hide();
+              $('#page2').show();
+              document.querySelector('#creatImgCover').src = `${res.data.url}`; // base64png
+              setTimeout(()=>tool.loadhide(),300);
+              
+            })
+            .fail(function(res){
+              setTimeout(()=>tool.loadhide(),300);
+              console.log('fail',res,typeof res);
+              showToast(res.responseJSON.message || '抱歉，服务器出错啦!');
+            });
+           }
+  
+  
+      };
+      return false;
+    };
+  
+  }
 function base64ToBlob(base64, mime)
 {
     mime = mime || '';

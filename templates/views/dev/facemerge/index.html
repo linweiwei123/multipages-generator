@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+<meta name="description" content="六大核心功能：提供月经记录、经期跟踪等多功能。及时提醒女性经期护理，让生活更舒心！美柚经期助手，中国女性的正确选择！" />
+<meta name="Keywords" content="美柚,大姨妈,月经助手,经期助手,月经应用,经期应用,经期记录,经期跟踪,月经记录,月经跟踪,月经预测,经期预测,经期护理,抽奖,福利" />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="wap-font-scale" content="no">
+<link rel="shortcut icon" href="//www.meiyou.com/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="turbolinks-cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="cache-control" content="no-cache,no-store,must-revalidate"/>
+<meta name="format-detection" content="telephone=no,date=no,address=no,email=no">
+<script>!function(N,M){function L(){var a=I.getBoundingClientRect().width;a/F>540&&(a=540*F);var d=a/10;I.style.fontSize=d+"px",D.rem=N.rem=d}var K,J=N.document,I=J.documentElement,H=J.querySelector('meta[name="viewport"]'),G=J.querySelector('meta[name="flexible"]'),F=0,E=0,D=M.flexible||(M.flexible={});if(H){console.warn("将根据已有的meta标签来设置缩放比例");var C=H.getAttribute("content").match(/initial-scale=([d.]+)/);C&&(E=parseFloat(C[1]),F=parseInt(1/E))}else{if(G){var B=G.getAttribute("content");if(B){var A=B.match(/initial-dpr=([d.]+)/),z=B.match(/maximum-dpr=([d.]+)/);A&&(F=parseFloat(A[1]),E=parseFloat((1/F).toFixed(2))),z&&(F=parseFloat(z[1]),E=parseFloat((1/F).toFixed(2)))}}}if(!F&&!E){var y=N.navigator.userAgent,x=(!!y.match(/android/gi),!!y.match(/iphone/gi)),w=x&&!!y.match(/OS 9_3/),v=N.devicePixelRatio;F=x&&!w?v>=3&&(!F||F>=3)?3:v>=2&&(!F||F>=2)?2:1:1,E=1/F}if(I.setAttribute("data-dpr",F),!H){if(H=J.createElement("meta"),H.setAttribute("name","viewport"),H.setAttribute("content","initial-scale="+E+", maximum-scale="+E+", minimum-scale="+E+", user-scalable=no"),I.firstElementChild){I.firstElementChild.appendChild(H)}else{var u=J.createElement("div");u.appendChild(H),J.write(u.innerHTML)}}N.addEventListener("resize",function(){clearTimeout(K),K=setTimeout(L,300)},!1),N.addEventListener("pageshow",function(b){b.persisted&&(clearTimeout(K),K=setTimeout(L,300))},!1),"complete"===J.readyState?J.body.style.fontSize=12*F+"px":J.addEventListener("DOMContentLoaded",function(){J.body.style.fontSize=12*F+"px"},!1),L(),D.dpr=N.dpr=F,D.refreshRem=L,D.rem2px=function(d){var c=parseFloat(d)*this.rem;return"string"==typeof d&&d.match(/rem$/)&&(c+="px"),c},D.px2rem=function(d){var c=parseFloat(d)/this.rem;return"string"==typeof d&&d.match(/px$/)&&(c+="rem"),c}}(window,window.lib||(window.lib={}));</script>
     <title>人脸融合</title>
-</head>
+<link href="/css/facemerge.36e1278c5de915fb787f.css" rel="stylesheet"></head>
+<link href="//at.alicdn.com/t/font_492329_2fispfbmyceah5mi.css" rel="stylesheet">
 <body>
 
 <!-- Slider main container -->
+<input id="file" type="file" class="hide" accept="image/*" />
+
 <div id="page1" class="page">
     <div class="swiper-container">
         <!-- Additional required wrapper -->
@@ -15,13 +30,13 @@
 
             <!-- Slides -->
             <div class="swiper-slide">
-                <img src="/assets/1.cf02dcfe508aedf1b13a03d2070b5a54.png" alt="">
+                <img src="/assets/p1.48bbf1afd931958203d9f6fa3a1877bb.png">
             </div>
             <div class="swiper-slide">
-                <img src="/assets/27.a1701a0b7650e83411bd3aedc6a4bf2f.png" alt="">
+                <img src="/assets/p2.72579d32620e1535f8c5f1dbebaac30f.png">
             </div>
             <div class="swiper-slide">
-                <img src="/assets/25.664d1409dbade2151c31662adaa8ed45.png" alt="">
+                <img src="/assets/p3.08cd77a584c1eb0247440cd85bdfc04f.png">
             </div>
         </div>
         <!-- If we need pagination -->
@@ -34,19 +49,61 @@
         <!-- If we need scrollbar -->
         <div class="swiper-scrollbar"></div>
     </div>
-
     <div class="btn">
         <button id="ensure">确认模板</button>
     </div>
+
+    <!-- 上传相机 -->
+
+ <div class="page-load-mask hide" id="showCamera">
+        <div style="display:table; width:100%; height:100%;">
+          <div style="display:table-row">
+            <div style="display:table-cell; vertical-align:middle;">
+              <div class="whiteblock tada" id="cameraWrap">
+                    <img src="/assets/close.d4b9761d9207c2ec4934f0f76f34e9de.png" alt="" class="close">
+                <span class="page-load-mask-img camera">&nbsp;</span>
+                <p class="page-load-mask-text">上传照片</p>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
 
 <div id="page2" class="page">
-    <div id="merge-content"></div>
-    <div class="btn uploadDist">
-        <button id="upload">上传照片</button>
-        <input class="hide" type="file" id="img">
+    <img id="creatImgCover" src="/assets/qr.4e70f2f0475c47fc7294b124710717ea.png" border="0" alt="" />
+    <div class="btn">
+        <button id="refresh">重新制作</button>
     </div>
 </div>
 
-<script type="text/javascript" src="/js/main.91545d8e3d1196686bd0.js"></script></body>
+ 
+
+   <!-- 加载进度圈 -->
+
+ <div class="page-load-mask hide" id="load" ontouchstart="event.preventDefault();">
+        <div style="display:table; width:100%; height:100%;">
+          <div style="display:table-row">
+            <div style="display:table-cell; vertical-align:middle;">
+              <div class="greyblock">
+                <span class="page-load-mask-img scan">&nbsp;</span>
+              </div>
+              <br>
+              <span class="page-load-mask-text">&nbsp;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- toast -->
+
+  <div class="mzc-toast " ontap="$(this).removeClass('show')">
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+<script type="text/javascript" src="/js/main.a5d90f8b2d980a96206f.js"></script></body>
 </html>
