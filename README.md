@@ -62,8 +62,8 @@ multipages-generate
 
 步骤三：进入工程名，并下载依赖包
 ```bash
-   cd {你的工程名}
-   npm run install
+     cd {你的项目名}
+     npm install
 ```
 
 步骤四: 启动前端和服务端环境
