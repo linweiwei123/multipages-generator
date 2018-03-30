@@ -15,10 +15,13 @@ webpacker.watch({
     }
 });
 
-// start browser-sync
-bs.init({
-    port:2000,
-    proxy: 'http://localhost:4000',
-    files: ['public/assets/**', 'views/**', 'views_dev/**']
-});
-
+webpacker.run((err,status)=>{
+    if (util.runCallback(err, status)) {
+        // start browser-sync
+        bs.init({
+            port:2000,
+            proxy: 'http://localhost:4000',
+            files: ['public/assets/**', 'views/**', 'views_dev/**']
+        });
+    }
+})
