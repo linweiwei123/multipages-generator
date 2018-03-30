@@ -66,12 +66,14 @@ multipages-generate
      npm install
 ```
 
-步骤四: 启动前端和服务端环境
+步骤四: 依次启动服务端环境，前端热启动环境
 ```
-    // 运行前端开发环境 以viewport为例子
-    npm run watch:viewport
-    // 启动服务端 （新手注意，新开一个dos窗口，进入你的创建的工程名）
+    // 启动服务端
     npm run start
+
+    // 运行前端开发环境 以viewport为例子（新手注意，新开一个dos窗口，进入你的创建的项目名）
+    npm run watch:viewport
+
 ```
 四步骤之后，你默认的浏览器自动打开此页面（如果没有，手动访问localhost:2000）
 
