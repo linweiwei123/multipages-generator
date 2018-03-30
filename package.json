@@ -29,7 +29,5 @@
   "dependencies": {
     "inquirer": "^5.1.0"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }
