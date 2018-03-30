@@ -6,6 +6,12 @@ module.exports = {
     plugins: {
         "postcss-px2rem":{
             remUnit: 75
+        },
+        autoprefixer: {
+            browsers: [
+                'last 2 versions',
+                'iOS >= 8'
+            ]
         }
     }
 
