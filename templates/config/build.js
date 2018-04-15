@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const chalk = require('chalk');
-const util = require('./util.js');
+const util = require('../tools/util.js');
 const getMergeConfig = require('./webpack.option.js');
-const qupload = require('./qupload');
+const qupload = require('../tools/qupload');
 const del = require('delete');
 
 const projectName = process.env.PROJECT_NAME;

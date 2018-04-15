@@ -4,7 +4,10 @@
   "description": "A project shows face merge ，base on QQAI",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "cross-env DEV_MODE=client ENV=dev node app.js",
+    "server": "cross-env DEV_MODE=server ENV=dev nodemon app.js",
+    "wpserver": "node ./config/webpack.dev.server.js",
+    "start:viewport": "cross-env ENV=dev PROJECT_NAME=viewport nodemon app.js",
     "watch:facemerge": "rimraf public &&cross-env ENV=dev PROJECT_NAME=facemerge node ./tools/webpack.watch.js",
     "watch:viewport": "rimraf public &&cross-env ENV=dev PROJECT_NAME=viewport node ./tools/webpack.watch.js",
     "release:viewport": "cross-env NODE_ENV=production PROJECT_NAME=viewport node ./tools/webpack.release.js"
@@ -54,7 +57,9 @@
     "swiper": "^4.1.6",
     "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^3.1.0"
+    "webpack-dev-middleware": "~1.12.0",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-hot-middleware": "~2.19.1"
   },
   "repository": {
     "type": "git",

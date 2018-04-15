@@ -168,7 +168,7 @@ cdnPath与qconfig.origin相对应
 
 #### 其他CDN
 如果你需要其他云服务器，那么你可以这样修改来支持
-在/tools/webpack.release.js 中的上传代码做修改
+在/tools/build.js 中的上传代码做修改
 ```
 webpacker.run((err,status)=>{
     if (util.runCallback(err, status)) {

@@ -22,8 +22,8 @@ function getMergeConfig(projectName){
         entry: dynamicConfig.entry,
         output: {
             publicPath: publicPath,
-            path: path.join(__dirname, '../public'),
-            filename: 'js/[name].[hash].js'
+            path: path.join(__dirname, '../dist'),
+            filename: `${projectName}/js/[name].js`
         },
         module: {
             rules: [
@@ -40,9 +40,12 @@ function getMergeConfig(projectName){
                 { test: /\.txt$/, use: 'raw-loader' },
                 {
                     test: /\.(scss|css)$/,
-                    use: ExtractTextPlugin.extract({
-                        fallback: "style-loader",
+                    // use: ExtractTextPlugin.extract({
+                    //     fallback: "style-loader",
                         use: [
+                            {
+                                loader: "style-loader"
+                            },
                             {
                                 loader: "css-loader"
                             },
@@ -53,7 +56,7 @@ function getMergeConfig(projectName){
                                 loader: "sass-loader"
                             }
                         ]
-                    })
+                    //})
                 },
                 {
                     test: /\.(html)$/,
@@ -71,13 +74,14 @@ function getMergeConfig(projectName){
                         {
                             loader: 'file-loader',
                             options: {
-                                name: 'assets/[name].[hash].[ext]'
+                                name: `${projectName}/imgs/[name].[ext]`,
                             }
                         }
                     ]
                 }
             ]
         },
+        // devtool: '#source-map',
         plugins:getPlugins(dynamicConfig.plugins),
         devServer: {
             historyApiFallback: true,
