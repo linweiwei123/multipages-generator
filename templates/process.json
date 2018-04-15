@@ -5,10 +5,10 @@
     "exec_mode": "cluster",
     "watch"  : true,
     "env"    :{
-      "NODE_ENV": "dev"
+      "ENV": "dev"
     },
     "env_production":{
-      "NODE_ENV": "prod"
+      "ENV": "prod"
     }
   }]
 }

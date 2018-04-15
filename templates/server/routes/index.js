@@ -11,7 +11,7 @@ var streamBuffers = require('stream-buffers');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('viewport/index');
+    res.render('demo/index');
 });
 
 

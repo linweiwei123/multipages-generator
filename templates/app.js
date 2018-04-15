@@ -9,7 +9,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var webpackHRM = require('./config/dev');
+var webpackHMR = require('./config/dev');
 var index = require('./server/routes/index');
 var users = require('./server/routes/users');
 
@@ -39,8 +39,9 @@ app.use(function(req, res, next) {
     next();
 });
 
-if (process.env.ENV === 'dev' && process.env.DEV_MODE === 'client') {
-  webpackHRM(app);
+// if in develop and front-end development mode，add Hot Module Reload
+if (process.env.ENV === 'dev') {
+  webpackHMR(app);
 }
 
 app.use('/', index);

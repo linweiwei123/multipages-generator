@@ -9,4 +9,4 @@ if (module.hot) {
     module.hot.accept();
 }
 
-document.querySelector('body').style.backgroundColor = 'blue';
+document.querySelector('body').style.backgroundColor = 'yellow';
