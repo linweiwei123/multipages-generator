@@ -28,6 +28,6 @@ webpacker.run((err,status)=>{
 
         console.log(chalk.magenta('[webpack]：编译完成！\r\n'));
 
-        // qupload('./public')
+        qupload('./dist')
     }
 });

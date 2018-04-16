@@ -31,7 +31,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -40,7 +40,7 @@ app.use(function(req, res, next) {
 });
 
 // if in develop and front-end development mode，add Hot Module Reload
-if (process.env.ENV === 'dev') {
+if (process.env.ENV === 'dev' && process.env.DEV_MODE !== 'server') {
   webpackHMR(app);
 }
 

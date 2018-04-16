@@ -30,7 +30,8 @@ function getBasicConfig(projectName){
                         loader: 'html-loader',
                         options: {
                             attrs: [':data-src','img:src'],
-                            interpolate: true
+                            interpolate: true,
+                            root: '../../../../client'
                         }
                     }
                 }

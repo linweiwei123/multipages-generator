@@ -112,7 +112,6 @@ function configProd(config){
         }
     ];
 
-    console.log(ENV);
 
     let plugins = [
         new UglifyJsPlugin(),

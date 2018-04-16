@@ -4,14 +4,13 @@
   "description": "A project shows face merge ，base on QQAI",
   "main": "app.js",
   "scripts": {
-    "start:demo": "cross-env ENV=dev PROJECT_NAME=demo node app.js",
+    "dev:demo": "cross-env ENV=dev PROJECT_NAME=demo node app.js",
     "release:demo": "cross-env ENV=prod PROJECT_NAME=demo node ./config/release.js",
-    "server": "cross-env DEV_MODE=server ENV=dev nodemon app.js",
+    "start": "cross-env DEV_MODE=server ENV=prod nodemon app.js",
     "wpserver": "node ./config/webpack.dev.server.js"
   },
   "dependencies": {
     "ali-oss": "^4.12.2",
-    "base64-img": "^1.0.4",
     "body-parser": "~1.18.2",
     "browser-sync": "^2.23.6",
     "cookie-parser": "~1.4.3",
@@ -19,14 +18,10 @@
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.15.5",
-    "formidable": "^1.1.1",
     "morgan": "~1.9.0",
     "nodemon": "^1.17.1",
     "postcss-px2rem": "^0.3.0",
-    "qq-ai-sdk": "^1.0.3",
-    "serve-favicon": "~2.4.5",
-    "stream-buffers": "^3.0.1",
-    "uuid": "^3.2.1"
+    "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.40",
@@ -55,7 +50,6 @@
     "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "~1.12.0",
-    "webpack-dev-server": "^2.11.1",
     "webpack-hot-middleware": "~2.19.1"
   },
   "repository": {
