@@ -3,9 +3,7 @@ multipages-generator [![NPM version](https://badge.fury.io/js/multipages-generat
 
 [![NPM](https://nodei.co/npm/multipages-generator.png?downloads=true&stars=true)](https://nodei.co/npm/multipages-generator)
 
-> 前端程序员，迟早屌遍天下！ —— [林伟伟](http://medium.yintage.com/)
-
-multipages-generator （MG） 🤡是一个像express-generator一样快速生成网站脚手架的npm模块，可以全局安装。只要一个命令即可生成多页面的express工程，是多页面webpack编译的最佳实践模板，最适合多个独立的移动端h5项目，有几个特点：
+multipages-generator （MG） 🤡是一个像express-generator一样快速生成网站开发脚手架的npm模块，可以全局安装。只要一个命令即可生成多页面的express工程，是多页面webpack编译的最佳实践模板，最适合多个独立的移动端h5项目，有几个特点：
 
 ## 适合场景
 如美柚，淘宝，今日头条，微信内分享的等独立的，小的h5，可以是广告，营销，活动，展示页，秀肌肉，好玩的h5，如[这些](http://www.ih5.cn/not-logged-in/template)。
@@ -17,13 +15,13 @@ multipages-generator （MG） 🤡是一个像express-generator一样快速生�
 
 ## 特点
 
-1. 支持webpack编译多页面，可编译指定项目，也可编译全部项目
-2. 前端编译支持热更新
-3. 编译出的网页性能经过优化，符合最佳实践（还不完善，后面加入[淘宝性能优化的全部内容](https://github.com/amfe/article/issues/21)）
-4. 支持development,producton环境区分
-5. producton环境可配置生产的css,js,images自动编译后上传OSS服务器
-6. webpack编译后的html模板支持ejs等模板引擎
-7. 使用node.js做服务，nodemon热更新
+1. 支持webpack编译多页面，可编译指定项目
+2. 使用Node.js，是一个全栈的解决方案
+3. 前端编译支持热更新
+4. 编译出的网页性能经过优化，符合最佳实践（还不完善，后面加入[淘宝性能优化的全部内容](https://github.com/amfe/article/issues/21)）
+5. 支持development,producton环境区分
+6. producton环境可配置生产的css,js,images自动编译后上传OSS服务器
+7. webpack编译后的html模板支持ejs等模板引擎
 8. 支持pm2集群启动
 9. 🔥 (新) 加入[手淘flexible布局方案](https://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)，适配不同尺寸和DPI的屏幕，加入postcss支持
 10. 🔥 (新) 支持生产release模式，配置下七牛云CDN，编译后js，css，图片等资源文件上传cdn
@@ -76,53 +74,51 @@ multipages-generate
      npm install
 ```
 
-步骤四: 依次启动服务端环境，前端热启动环境
+步骤四: 启动指定的h5应用
 ```
-    // 启动服务端
-    npm run start
-
-    // 运行前端开发环境 以viewport为例子（新手注意，新开一个dos窗口，进入你的创建的项目名）
-    npm run watch:viewport
+    npm run dev:demo //根据你自己的webpack配置而定
 
 ```
 四步骤之后，你默认的浏览器自动打开此页面（如果没有，手动访问localhost:2000）
 
-==注意，目前发现viewport例子的素材图片（在/apps/viewport/assets/imgs 目录下）经过全局安装会编码出问题。不影响运行，但是如果想看到上面的demo页面请从[我的网盘](https://pan.baidu.com/s/1GyIunAicYsS3dCtJx-9hkg) 下载素材图片，解压放到/apps/viewport/assets/imgs 目录下全部替换那些出问题的图片==
+==注意，目前发现demo例子的素材图片（在/client/demo/imgs 目录下）经过全局安装会编码出问题。不影响运行，但是如果想看到上面的demo页面请从[我的网盘](https://pan.baidu.com/s/1GyIunAicYsS3dCtJx-9hkg) 下载素材图片，解压放到/client/demo/imgs 目录下全部替换那些出问题的图片==
 
 将来会选用更加适当的demo做演示
 
 ## 运行与开发
-### 启动服务端
-上面已经启动了，如果还没执行上面的步骤，执行以下命令
-```bash
+### 启动指定应用
+经过上面的步骤，你已经启动了指定的应有，前端代码支持热更新，修改html，css，js等文件都会触发浏览器热更新
+
+服务端修改不会自动重启。如果需要服务端也要热启动，需要切换到服务端开发模式(++服务端开发模式关闭了前端热启动，而且前端页面此时也无法访问，建议前后分离开发, 并且服务端先于前端开发。或者再起一个服务，修改端口，代理访问++)
+```
     npm run start
 ```
-### 前端热启动项目facemerge
-打开另一个终端黑窗
-```bash
-    npm run watch:facemerge
-```
-会有页面打开,没有的话手动打开http://localhost:2000
-
-### 注意：
- 本应用需启动两个服务，一个是服务端node.js（端口默认为4000），一个是前端（browser-sync，默认2000）
-这里为了让开发时更愉悦，启动了前端服务，具有热更新的性能，每次更新自动编译输出到express工程的对应目录中，项目部署时不需要启动；
 
 ## 新增一个项目
-apps 目录下已有facemerge，viewport两个项目，新增一个项目xxx，目录结构需参考facemerge
+1. client 目录下已有个demo应用，新增一个应用demo2（名称随意），目录结构需参考demo
+    ```bash
+    demo
+     ├─css
+     ├─imgs
+     └─js
+    ```
+
+    html 为了支持模板引擎，则把页面放在server/views/dev/demo 下
+
+2. package.js 新增对应的开发指令，参考demo的配置方式
 ```bash
-├─facemerge
-│  ├─assets
-│  │  ├─css
-│  │  └─imgs
-│  ├─js
-│  └─views
-└─voicemerge
+    "dev:demo2": "cross-env ENV=dev PROJECT_NAME=demo2 node app.js",
 ```
+3.  配置对应应用的生产编译指令，参考demo的配置方式
 ```bash
-    "watch:facemerge": "rimraf public &&cross-env ENV=dev PROJECT_NAME=facemerge node ./tools/webpack.watch.js"
+    "release:demo2": "cross-env ENV=prod PROJECT_NAME=demo2 node ./config/release.js",
+
 ```
-启动方式跟上述 “开发模式启动项目facemerge” 相同
+配置完成之后，就可以进行启动和开发了
+
+```
+    npm run dev:demo2
+```
 
 ## 示例页面
 ![image](http://ovn18u9yn.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180328152125.jpg?imageView2/1/w/375/h/667)
@@ -132,19 +128,25 @@ apps 目录下已有facemerge，viewport两个项目，新增一个项目xxx，�
 ![image](http://oflt40zxf.bkt.clouddn.com/1522288108.png)
 
 ## 配置
-MG是一个完整的H5网站解决方案，支持自动上传静态资源到CDN，支持Mysql，MongoDB，Redis数据库连接，支持webpack，postcss等，所以需要根据实际场景按需配置
+mg.config.js 根目录下有个mg.config.js
+
+这是整个项目的配置文件，目前配置了七牛云CDN上传的凭证配置，如果要增家redis，mysql，mongodb等配置，也建议放在这里；
+
+postcss.config.js 同样在根目录下，是postcss.config.js的配置文件
+
+process.json 同样在根目录下，是部署时的pm2启动配置文件
 
 ### Release模式上传到CDN
 MG支持开发模式，也支持发布生产模式，生产模式编译出来的资源会发布到CDN，目前默认是七牛云，需要配置七牛云的相关信息，当然你也可以选择
 阿里OSS等其他静态文件存储方式
 
-示例viewport项目编译命令
+示例demo项目编译命令
 ```
-  npm run release:viewport
+  npm run release:demo
 ```
-编译后的文件输出到public下，分为assets,js,css
+编译后的文件输出到dist下，分为imgs,js,css
 
-添加新项目时，请参考示例viewport的配置方式添加
+添加新项目时，请参考示例demo的配置方式添加
 
 #### 七牛云CDN
 MG目前支持发布时自动上传七牛云，需要配置七牛云的accesskey，secretkey等。在根目录下的mg.config.js中，修改如下配置(⚠️下面的信息只是胡写例子)
@@ -180,26 +182,23 @@ webpacker.run((err,status)=>{
 
         console.log(chalk.magenta('[webpack]：编译完成！\r\n'));
 
-        qupload('./public')
+        qupload('./dist')
     }
 });
 ```
-将qupload 方法改成你的云服务器上传的代码，核心思想是编译public下的所有文件，如果是文件，则上传，否则继续遍历文件夹下的内容；可参考/tools/qupload.js的逻辑来写
+将qupload 方法改成你的云服务器上传的代码，核心思想是遍历dist下的所有文件，如果是文件，则上传，否则继续遍历文件夹下的内容；可参考/tools/qupload.js的逻辑来写
 
-## 未来计划 😱
-1. 案例demo页完善，做一个腾讯AI的人脸融合H5
-2. 加入mysql，mongoDB可选配置
-3. 生产环境配置更佳完善
-4. 文档更详细
-5. 性能优化加入手淘的全部方案，以及google的性能优化内容
+## Todo List
+1. 性能优化加入手淘的一些方案，以及google的性能优化内容
+2. 服务端增加mongodb，mysql，redis等可选配置
+3. 不再仅限于h5，新增vue/react + node.js SPA可选方案
+4. 文档完善
 
-## Contribution 主要贡献者列表
-🐵
-林伟伟
+## Contribution
+
 [吴俊川](https://github.com/wujunchuan)
-[戴炳泉](https://github.com/DBingo)
-[郭舒欣](https://github.com/uouin)
-🐵
+
+感谢俊川提供的热更新方案的建议，以及对项目某些细节的改进
 
 ## 配套部署方案请参考
 [30分钟快速部署到云服务器上](http://medium.yintage.com/?p=248)
@@ -210,8 +209,5 @@ webpacker.run((err,status)=>{
 The MIT License 请自由享受开源。
 
 
-## 我的其他文章
-<http://medium.yintage.com/>
 
-<http://www.yintage.com/>
 

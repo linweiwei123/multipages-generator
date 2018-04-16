@@ -3,10 +3,10 @@
 npm install
 
 # 启动
-## 启动服务端
-npm run start
-## watch项目
-npm run watch:facemerge
+npm run dev:demo
+
+## 发布
+npm run release:demo
 
 # pm2启动
 pm2 start process.json

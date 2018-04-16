@@ -6,8 +6,7 @@
   "scripts": {
     "dev:demo": "cross-env ENV=dev PROJECT_NAME=demo node app.js",
     "release:demo": "cross-env ENV=prod PROJECT_NAME=demo node ./config/release.js",
-    "start": "cross-env DEV_MODE=server ENV=prod nodemon app.js",
-    "wpserver": "node ./config/webpack.dev.server.js"
+    "start": "cross-env DEV_MODE=server ENV=dev nodemon app.js"
   },
   "dependencies": {
     "ali-oss": "^4.12.2",
