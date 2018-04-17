@@ -1,7 +1,7 @@
 /**
  * Created by yitala on 2018/4/14.
  */
-import '../css/index.scss';
+import '../css/index.css';
 import '../../common/css/swiper.css';
 import $ from 'jquery';
 import Swiper from 'swiper';

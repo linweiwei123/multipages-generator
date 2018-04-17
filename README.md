@@ -52,7 +52,7 @@ node环境：node.js 6.11.0
 通过NPM全局安装即可使用：
 
 ```bash
-npm install multipages-generator -g
+npm install multipages-generator -g  //目前已升级至2.0版本，请注意
 ```
 
 ## 创建并运行📽
@@ -88,6 +88,8 @@ multipages-generate
 ## 运行与开发
 ### 启动指定应用
 经过上面的步骤，你已经启动了指定的应有，前端代码支持热更新，修改html，css，js等文件都会触发浏览器热更新
+
+![image](http://oflt40zxf.bkt.clouddn.com/HRM.gif)
 
 服务端修改不会自动重启。如果需要服务端也要热启动，需要切换到服务端开发模式(++服务端开发模式关闭了前端热启动，而且前端页面此时也无法访问，建议前后分离开发, 并且服务端先于前端开发。或者再起一个服务，修改端口，代理访问++)
 ```
