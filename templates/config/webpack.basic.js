@@ -6,7 +6,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 function getBasicConfig(projectName){
     return {
-        entry: [path.join(__dirname,'../','client/demo/js/index.js')],
+        entry: [path.join(__dirname,'../',`client/${projectName}/js/index.js`)],
         output: {
             path: path.join(__dirname, '../dist'),
             filename: `${projectName}/js/[name].[hash].js`

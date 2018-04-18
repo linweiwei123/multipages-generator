@@ -59,5 +59,9 @@
   "bugs": {
     "url": "https://github.com/linweiwei123/face-merge/issues"
   },
-  "homepage": "https://github.com/linweiwei123/face-merge#readme"
+  "homepage": "https://github.com/linweiwei123/face-merge#readme",
+  "nodemonConfig": {
+    "ignore": ["client/**", "server/views/**"],
+    "delay": "2500"
+  }
 }
