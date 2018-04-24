@@ -5,6 +5,7 @@ var aliupload = require('../../tools/aliupload');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
     res.render('demo/index');
 });
 

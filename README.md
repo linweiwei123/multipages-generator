@@ -79,7 +79,7 @@ multipages-generate
     npm run dev:demo //根据你自己的webpack配置而定
 
 ```
-四步骤之后，你默认的浏览器自动打开此页面（如果没有，手动访问localhost:2000）
+四步骤之后，localhost:2000
 
 ==注意，目前发现demo例子的素材图片（在/client/demo/imgs 目录下）经过全局安装会编码出问题。不影响运行，但是如果想看到上面的demo页面请从[我的网盘](https://pan.baidu.com/s/1GyIunAicYsS3dCtJx-9hkg) 下载素材图片，解压放到/client/demo/imgs 目录下全部替换那些出问题的图片==
 
@@ -91,7 +91,8 @@ multipages-generate
 
 ![image](http://oflt40zxf.bkt.clouddn.com/HRM.gif)
 
-服务端修改不会自动重启。如果需要服务端也要热启动，需要切换到服务端开发模式(++服务端开发模式关闭了前端热启动，而且前端页面此时也无法访问，建议前后分离开发, 并且服务端先于前端开发。或者再起一个服务，修改端口，代理访问++)
+服务端使用nodemon热启动，需要刷新页面
+
 ```
     npm run start
 ```

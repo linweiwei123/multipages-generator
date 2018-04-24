@@ -11,8 +11,6 @@ const webpacker = webpack(config);
 
 module.exports = function(app){
 
-    console.log(JSON.stringify(config));
-
     app.use(require("webpack-dev-middleware")(webpacker, {
         noInfo: false,
         publicPath: config.output.publicPath,
@@ -24,7 +22,8 @@ module.exports = function(app){
     }));
 
     bs.init({
-        port:2000,
+        open: false,
+        port: 2000,
         proxy: 'http://localhost:4000',
         files: ['dist/**', 'views/dev/**']
     });
