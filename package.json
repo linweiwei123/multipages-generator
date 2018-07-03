@@ -1,6 +1,6 @@
 {
   "name": "multipages-generator",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "generator for multipage webpack application template ,use express ",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
-  "name": "face-merge",
-  "version": "1.0.0",
+  "name": "mg-template",
+  "version": "1.0.1",
   "description": "A project shows face merge ，base on QQAI",
   "main": "app.js",
   "scripts": {
