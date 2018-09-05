@@ -1,12 +1,13 @@
 {
   "name": "mg-template",
-  "version": "1.0.1",
-  "description": "A project shows face merge ，base on QQAI",
+  "version": "1.0.0",
+  "description": "A excellent develop project template for mobile H5 !",
   "main": "app.js",
   "scripts": {
-    "dev:demo": "cross-env ENV=dev PROJECT_NAME=demo nodemon app.js",
-    "release:demo": "cross-env ENV=prod PROJECT_NAME=demo node ./config/release.js",
-    "start": "cross-env DEV_MODE=server ENV=dev nodemon app.js"
+    "server": "cross-env ENV=development nodemon app.js",
+    "start": "cross-env NODE_ENV=development node build/commands/ocstart.js",
+    "build": "cross-env NODE_ENV=production node build/commands/build.js",
+    "upload": "node build/commands/upload.js"
   },
   "dependencies": {
     "ali-oss": "^4.12.2",
@@ -17,6 +18,7 @@
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.15.5",
+    "http-proxy-middleware": "^0.19.0",
     "morgan": "~1.9.0",
     "nodemon": "^1.17.1",
     "postcss-px2rem": "^0.3.0",
@@ -27,43 +29,47 @@
     "@babel/preset-env": "^7.0.0-beta.40",
     "autoprefixer": "^8.2.0",
     "babel-loader": "^8.0.0-beta.0",
-    "chalk": "^2.3.2",
+    "chalk": "^2.4.1",
+    "clui": "^0.3.6",
     "css-loader": "^0.28.10",
     "delete": "^1.1.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.0.5",
-    "inquirer": "^5.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "inquirer": "^5.2.0",
     "jquery": "^3.3.1",
+    "less": "^3.7.0",
+    "less-loader": "^4.1.0",
+    "meetyou-ali-oss": "^1.0.7",
+    "mini-css-extract-plugin": "^0.4.2",
+    "node-sass": "^4.9.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "ora": "^3.0.0",
     "postcss-loader": "^2.1.3",
     "postcss-safe-parser": "^3.0.1",
     "progress-bar-webpack-plugin": "^1.11.0",
     "qn": "^1.3.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
-    "style-loader": "^0.20.2",
-    "swiper": "^4.1.6",
-    "uglifyjs-webpack-plugin": "^1.2.2",
-    "webpack": "^3.11.0",
-    "webpack-dev-middleware": "~1.12.0",
-    "webpack-hot-middleware": "~2.19.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/linweiwei123/face-merge.git"
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.20.3",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.17.1",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-dev-middleware": "^3.2.0",
+    "webpack-hot-middleware": "^2.22.3",
+    "webpack-md5-hash": "0.0.6"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/linweiwei123/face-merge/issues"
-  },
-  "homepage": "https://github.com/linweiwei123/face-merge#readme",
   "nodemonConfig": {
     "ignore": [
       "client/**",
-      "server/views/**"
+      "dist/**",
+      "build/**"
     ],
     "delay": "2500"
   }

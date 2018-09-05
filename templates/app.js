@@ -8,21 +8,18 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var webpackHMR = require('./config/dev');
-var index = require('./server/routes/index');
-var users = require('./server/routes/users');
-
+var router = require('./server/routes/index');
 var app = express();
 var server = http.createServer(app);
 
-var port = normalizePort(process.env.PORT || '4000');
+var serverPort = require('./mg.config').server.port;
+var port = normalizePort(process.env.PORT || serverPort || '8090');
 app.set('port', port);
 
 
 // views目标设置为ejs与html
 app.engine('html', require('ejs').renderFile);
-app.set('views',path.join(__dirname,'server/views',process.env.ENV!=='prod'?'dev':'prod'));
+app.set('views',path.join(__dirname,'server/views',process.env.ENV !== 'prod' ? 'dev' : 'prod'));
 app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
@@ -31,7 +28,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'static')));
+if(process.env.ENV !== 'prod'){
+    app.use(express.static(path.join(__dirname, 'client')));
+}
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -39,13 +39,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-// if in develop and front-end development mode，add Hot Module Reload
-if (process.env.ENV === 'dev' && process.env.DEV_MODE !== 'server') {
-  webpackHMR(app);
-}
-
-app.use('/', index);
-app.use('/users', users);
+router.init(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -62,6 +56,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
+  console.log(err);
   res.render('error');
 });
 

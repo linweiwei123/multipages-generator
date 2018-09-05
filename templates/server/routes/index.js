@@ -1,14 +1,12 @@
-var express = require('express');
-var router = express.Router();
-var aliupload = require('../../tools/aliupload');
+const demo = require('./demo');
+//<@add page@>
 
+module.exports.init = app =>{
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
+    app.get('/demo', demo.index);
+    //<@add page router@>
 
-    res.render('demo/index');
-});
+    return app;
+};
 
-
-module.exports = router;
 

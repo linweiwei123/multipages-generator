@@ -1,0 +1,237 @@
+@charset "utf-8";
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 10px;
+  height: 100%;
+  min-height: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  user-select: none;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  position: relative;
+  background-color: #fff;
+  color: #323232;
+  font-family: STHeiti,Microsoft YaHei,Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  word-break: break-word;
+}
+
+a:hover,
+a:active {
+  outline: none;
+}
+
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+  outline: none;
+  -moz-outline-style: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* remove the up and down arrow for input:number; */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+li,
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+/* Remove inner padding and border in Firefox */
+::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  -webkit-touch-callout: none;
+  appearance: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-weight: normal;
+}
+
+p {
+  line-height: 18px;
+  border: 0;
+  outline: 0;
+  max-height: 100%;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+input,
+select,
+textarea {
+  -webkit-appearance: none;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+/*
+ * 1. Address `overflow` set to `hidden` in IE 10/11.
+ * 2. Improve consistency of cursor style
+ */
+button {
+  overflow: visible;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clear::before,
+.clear::after {
+  *zoom: 1;
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.clear::after {
+  clear: both;
+}
+
+/* 0.5px线条 */
+.line-bottom::after,
+.line-top::before {
+  content: "";
+  position: absolute;
+  background-color: #ddd;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.line-left::before,
+.line-right::after {
+  content: "";
+  position: absolute;
+  background-color: #ddd;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+.line-bottom::after {
+  bottom: 0;
+}
+
+.line-top::before {
+  top: 0;
+}
+
+.line-left::before {
+  left: 0;
+}
+
+.line-right::after {
+  right: 0;
+}
+
