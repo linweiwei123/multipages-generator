@@ -13,7 +13,7 @@ multipages-generator （MG） 🤡是一个像express-generator一样快速生�
 ## 特点
 
 1. 使用Node.js，是一个JavasScript的全栈的H5解决方案，工程可直接部署
-2. 高效率开发，支持一键创建模块（业务模块）、一键创建新模块、一键编译发布等快捷命令
+2. 高效率开发，支持一键创建模块（业务模块、一键编译发布、上传、生产代码分析等快捷命令
 3. 工程结构良好划分，结构清晰，可维护。
 4. 支持development,producton环境区分
 5. 支持sass、less、postcss
