@@ -33,7 +33,7 @@ multipages-generator （MG） 🤡是一个像express-generator一样快速生�
 * [新建一个模块](#新建一个模块)
 * [指定模块启动](#指定模块启动)
 * [指定模块编译](#指定模块编译)
-* [上传](#上传说明)
+* [上传](#上传)
     * [七牛云CDN](#七牛云cdn)
     * [阿里云OSS](#阿里云oss)
 * [配置](#配置)
@@ -56,14 +56,18 @@ npm install multipages-generator -g  //目前最新版本为1.5.x
 ## 创建一个工程 📽
 
 ```bash
-C:\xxx\workspace>meet init 
+meet init
+```
+
+```bash
+C:\xxx\workspace>meet init
 ? Project name: h5-project
-  __  __           _      ____ _     ___ 
+  __  __           _      ____ _     ___
  |  \/  | ___  ___| |_   / ___| |   |_ _|
- | |\/| |/ _ \/ _ \ __| | |   | |    | | 
- | |  | |  __/  __/ |_  | |___| |___ | | 
+ | |\/| |/ _ \/ _ \ __| | |   | |    | |
+ | |  | |  __/  __/ |_  | |___| |___ | |
  |_|  |_|\___|\___|\__|  \____|_____|___|
-                                         
+
    [Success] Project h5-project init finished, be pleasure to use 😊!
 
    Install dependencies:
@@ -76,121 +80,195 @@ C:\xxx\workspace>meet init
 
 ```
 
-==注意，目前发现demo例子的素材图片（在/client/demo/imgs 目录下）经过全局安装会编码出问题。不影响运行，但是如果想看到上面的demo页面请从[我的网盘](https://pan.baidu.com/s/1GyIunAicYsS3dCtJx-9hkg) 下载素材图片，解压放到/client/demo/imgs 目录下全部替换那些出问题的图片==
+注意，由于npm不能存放图片，故demo中使用网络图片替代。开发中用相对路径引用images下的图片
 
-将来会选用更加适当的demo做演示
+## 指令介绍
+查看指令帮助 meet -help
+```bash
+C:\xxx\workspace>meet -help
 
-## 运行与开发
-### 启动指定应用
-经过上面的步骤，你已经启动了指定的应有，前端代码支持热更新，修改html，css，js等文件都会触发浏览器热更新
+  Usage: meet [command]
+
+  Options:
+
+    -v, --version                 output the version number
+    -h, --help                    output usage information
+
+  Commands:
+
+    init                          initialize your project
+    new [module]/[module]-[page]  generate a new module
+    start [module]                start application in development mode
+    build [module]                build a module using webpack
+    upload                        upload dist files to CDN
+    analyse                       analysis dist files size and percent
+    git                           auto git commit and push
+
+```
+注意，创建模块使用meet new [module]，如果是在该模块下创建其他页面，则使用meet new [module]-[page]。举例：在demo下创建一个详情页面detail.html 使用 meet new demo-detail
+
+## 新建一个模块
+
+meet new [module]/[module]-[page]
+
+```bash
+meet new game
+```
+得到一个文件结构
+```bash
+game
+ ├─images // 由于没有文件，可能不会创建，开发者自行创建images
+ ├─js
+ | ├─index
+ | | ├─business.js  // 具体业务层（可根据业务复杂度再细分）
+ | | ├─service.js   // 数据处理层
+ | | └─util.js      // 工具类函数层
+ | └─index.js       // 主逻辑层
+ ├─styles
+ | └─index.css      // css
+ └─views
+   └─index.html     // html源文件
+```
+
+## 指定模块启动
+### meet start [module]
+
+```
+meet start demo
+```
+启动后会出现如下显示，可点击相应的地址访问
+```
+ √ Build done
+
+[Tips] visit: http://localhost:8080/demo/
+            : http://192.168.50.194:8080/demo/
+
+```
+
+### 热编译
+
+JS、CSS支持热编译，HTML需要刷新
 
 ![image](http://oflt40zxf.bkt.clouddn.com/HRM.gif)
 
-服务端使用nodemon热启动，需要刷新页面
+生成的html文件中有如下两处标记，用来热编译用。无需担心，编译阶段会删除。
 
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <% include ../head.html %>
+  <title>demo</title>
+  <!--@hot-reload, will auto remove after compiled-->
+  <link rel="stylesheet" data-hr="hot-reload" href="/demo/styles/index.css">
+</head>
+<body>
+  <div>内容...</div>
+  <!--@hot-reload, will auto remove after compiled-->
+  <script type="text/javascript" data-hr="hot-reload" src="/common/js/hot-reload.js"></script>
+</body>
+</html>
 ```
-    npm run start
-```
 
-## 新增一个项目
-1. client 目录下已有个demo应用，新增一个应用demo2（名称随意），目录结构需参考demo
-    ```bash
-    demo
-     ├─css
-     ├─imgs
-     └─js
-    ```
+## 指定模块编译
 
-    html 为了支持模板引擎，则把页面放在server/views/dev/demo 下
+### meet build [demo]
 
-2. package.js 新增对应的开发指令，参考demo的配置方式
 ```bash
-    "dev:demo2": "cross-env ENV=dev PROJECT_NAME=demo2 node app.js",
+meet build demo
 ```
-3.  配置对应应用的生产编译指令，参考demo的配置方式
+
 ```bash
-    "release:demo2": "cross-env ENV=prod PROJECT_NAME=demo2 node ./config/release.js",
+C:xxx\workspace\h5>meet build demo
+
+> mg-template@1.0.0 build C:\meetyou\workspace\test\mg-workspace\h5
+> cross-env NODE_ENV=production node build/commands/build.js "demo"
+
+Delete dist directory!
+  ⣾ Building...
+  ⣽ lasted 1 seconds. HTML去除开发环境hotReload代码: ..\server\views\prod\demo\index.html
+Hash: 2a217fb45f03fb354254
+Version: webpack 4.17.2
+Time: 1687ms
+Built at: 2018-09-06 19:50:40
+                               Asset      Size  Chunks             Chunk Names
+                  index.12969e6e.css  4.71 KiB       0  [emitted]  index
+                   index.080a1e3d.js  1.01 KiB       0  [emitted]  index
+..\server\views\prod\demo\index.html  3.74 KiB          [emitted]
+Entrypoint index = index.12969e6e.css index.080a1e3d.js
+
+Upload dist files to Qiniu CDN：
+Webpack Bundle Analyzer is started at http://127.0.0.1:8888
+Use Ctrl+C to close it
+[Success]: 上传文件至七牛云CDN成功！文件地址:http://oflt40zxf.bkt.clouddn.com/index.080a1e3d.js
+[Success]: 上传文件至七牛云CDN成功！文件地址:http://oflt40zxf.bkt.clouddn.com/index.12969e6e.css
+[Success]: 上传完毕 😊!
+Use Ctrl+C to close it
 
 ```
-配置完成之后，就可以进行启动和开发了
+编译后分析会调用webpack插件显示每个js，css的依赖情况
 
+![image](http://oflt40zxf.bkt.clouddn.com/build.png)
+
+### meet analyse
+通过meet analyse 查看占比
+
+![image](http://oflt40zxf.bkt.clouddn.com/chart.png)
+
+## 上传
+
+### meet upload
+上传的是dist文件夹中的文件，配置阿里云，七牛云请看mg.config.js
+```bash
+meet upload
 ```
-    npm run dev:demo2
-```
-
-## 示例页面
-![image](http://ovn18u9yn.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180328152125.jpg?imageView2/1/w/375/h/667)
-
-查看DEMO用手机chrome，淘宝，微信等扫下二维码查看
-
-![image](http://oflt40zxf.bkt.clouddn.com/1522288108.png)
 
 ## 配置
-mg.config.js 根目录下有个mg.config.js
+### mg.config.js
+MG目前支持发布时自动,支持阿里OSS、七牛云
 
-这是整个项目的配置文件，目前配置了七牛云CDN上传的凭证配置，如果要增家redis，mysql，mongodb等配置，也建议放在这里；
+mg.config.js 中有如下配置
 
-postcss.config.js 同样在根目录下，是postcss.config.js的配置文件
-
-process.json 同样在根目录下，是部署时的pm2启动配置文件
-
-### Release模式上传到CDN
-MG支持开发模式，也支持发布生产模式，生产模式编译出来的资源会发布到CDN，目前默认是七牛云，需要配置七牛云的相关信息，当然你也可以选择
-阿里OSS等其他静态文件存储方式
-
-示例demo项目编译命令
 ```
-  npm run release:demo
-```
-编译后的文件输出到dist下，分为imgs,js,css
+module.exports = {
 
-添加新项目时，请参考示例demo的配置方式添加
+    // 启动的客户端服务器端口
+    clientPort: '8080',
 
-#### 七牛云CDN
-MG目前支持发布时自动上传七牛云，需要配置七牛云的accesskey，secretkey等。在根目录下的mg.config.js中，修改如下配置(⚠️下面的信息只是胡写例子)
-```
-// 七牛云CDN上传配置
-module.exports.qconfig = {
-    ACCESS_KEY: 'ei1uOdGpVLliA7kb50si4wfYLPwt5v0shU10',
-    SECRET_KEY: '-pFFIY-ew35Exyfcd40k15ah3UfZTFWFKF',
-    bucket:'hotsts-image',
-    origin:'http://ofltzxf.bkt.clouddn.com'
+    // 服务端服务器端口
+    server: {
+        port: '8090',
+    },
+
+    // 上传相关配置
+    upload: {
+        cdn: '//oflt40zxf.bkt.clouddn.com/',
+        projectPrefix: 'nodejs-common',
+
+        // 如果是阿里云，则aliconfig配置一个空对象，目前采用.aliossacess 文件配置的方式
+        // aliconfig: {
+        //
+        // },
+        // 七牛云
+
+        qconfig: {
+            ACCESS_KEY: 'ei1uOdGpVLliA7kb50sLcV9i4wfYLPwt5v0shU10',
+            SECRET_KEY: '-pFFIY-ew35Exyfcd67Sbaw40k15ah3UfZTFWFKF',
+            bucket:'hotshots-image',
+            origin:'http://oflt40zxf.bkt.clouddn.com'
+        },
+
+        // 是否编译后自动上传
+        autoUpload: true
+
+    }
 };
 
-// js，css，图片等资源文件编译后增加的前缀
-module.exports.cdnPath = '//ofltzxf.bkt.clouddn.com/';
-
 ```
-cdnPath与qconfig.origin相对应
-
-#### 阿里云OSS
-即将支持
-
-#### 其他CDN
-如果你需要其他云服务器，那么你可以这样修改来支持
-在/tools/release.js 中的上传代码做修改
-```
-webpacker.run((err,status)=>{
-    if (util.runCallback(err, status)) {
-
-        if(err){
-            console.log(chalk.red('[webpack]：编译失败 ' + err.toString()));
-            return;
-        }
-
-        console.log(chalk.magenta('[webpack]：编译完成！\r\n'));
-
-        qupload('./dist')
-    }
-});
-```
-将qupload 方法改成你的云服务器上传的代码，核心思想是遍历dist下的所有文件，如果是文件，则上传，否则继续遍历文件夹下的内容；可参考/tools/qupload.js的逻辑来写
 
 ## Todo List
 1. 性能优化加入手淘的一些方案，以及google的性能优化内容
 2. 服务端增加mongodb，mysql，redis等可选配置
-3. 不再仅限于h5，新增vue/react + node.js SPA可选方案
-4. 文档完善
 
 ## Contribution
 
@@ -205,7 +283,3 @@ webpacker.run((err,status)=>{
 ## License
 
 The MIT License 请自由享受开源。
-
-
-
-
