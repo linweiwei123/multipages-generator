@@ -58,7 +58,7 @@ function complete () {
         console.log(chalk.magenta(`     cd ${projectName} && npm install`));
         console.log();
         console.log('   Run the app:');
-        console.log(chalk.magenta('     npm run start demo'));
+        console.log(chalk.magenta('     meet start demo'));
         console.log('   Or:');
         console.log(chalk.magenta('     pm2 start process.json'));
 

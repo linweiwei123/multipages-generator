@@ -55,29 +55,26 @@ npm install multipages-generator -g  //目前最新版本为1.5.x
 
 ## 创建一个工程 📽
 
-步骤一：执行multipages-generate创建网站
 ```bash
-multipages-generate
+C:\xxx\workspace>meet init 
+? Project name: h5-project
+  __  __           _      ____ _     ___ 
+ |  \/  | ___  ___| |_   / ___| |   |_ _|
+ | |\/| |/ _ \/ _ \ __| | |   | |    | | 
+ | |  | |  __/  __/ |_  | |___| |___ | | 
+ |_|  |_|\___|\___|\__|  \____|_____|___|
+                                         
+   [Success] Project h5-project init finished, be pleasure to use 😊!
+
+   Install dependencies:
+     cd h5-project && npm install
+
+   Run the app:
+     meet start demo
+   Or:
+     pm2 start process.json
 
 ```
-步骤二：出现输入项目名提示，并输入您的项目名称
-```bash
-? Project name: <输入项目名>
-
-```
-
-步骤三：进入工程名，并下载依赖包
-```bash
-     cd {你的项目名}
-     npm install
-```
-
-步骤四: 启动指定的h5应用
-```
-    npm run dev:demo //根据你自己的webpack配置而定
-
-```
-四步骤之后，localhost:2000
 
 ==注意，目前发现demo例子的素材图片（在/client/demo/imgs 目录下）经过全局安装会编码出问题。不影响运行，但是如果想看到上面的demo页面请从[我的网盘](https://pan.baidu.com/s/1GyIunAicYsS3dCtJx-9hkg) 下载素材图片，解压放到/client/demo/imgs 目录下全部替换那些出问题的图片==
 
