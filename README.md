@@ -3,15 +3,12 @@ multipages-generator [![NPM version](https://badge.fury.io/js/multipages-generat
 
 [![NPM](https://nodei.co/npm/multipages-generator.png?downloads=true&stars=true)](https://nodei.co/npm/multipages-generator)
 
-multipages-generator （MG） 🤡是一个像express-generator一样快速生成网站开发脚手架的npm模块，可以全局安装。只要一个命令即可生成多页面的express工程，是多页面webpack编译的最佳实践模板，最适合多个独立的移动端h5项目，有几个特点：
+multipages-generator （MG） 🤡是一个像express-generator一样快速生成网站开发脚手架的npm模块，完整的移动端h5解决方案，快速、高效、良好兼容性、高性能。
 
 ## 适合场景
 如美柚，淘宝，今日头条，微信内分享的等独立的，小的h5，可以是广告，营销，活动，展示页，秀肌肉，好玩的h5，如[这些](http://www.ih5.cn/not-logged-in/template)。
 还有我们的例子：
 [美柚吃鸡游戏](https://uedkit.meiyou.com/annualmeeting/game/)
-
-## 优势是 什么？
-完整的h5解决方案，快速开发，自动完成性能优化（目前只是基本功能，未完持续，后面支持[google web 性能优化](https://developers.google.com/web/fundamentals/performance/why-performance-matters/)
 
 ## 特点
 
@@ -80,8 +77,6 @@ C:\xxx\workspace>meet init
 
 ```
 
-注意，由于npm不能存放图片，故demo中使用网络图片替代。开发中用相对路径引用images下的图片
-
 ## 指令介绍
 查看指令帮助 meet -help
 ```bash
@@ -144,6 +139,8 @@ meet start demo
             : http://192.168.50.194:8080/demo/
 
 ```
+
+注意，由于npm不能存放图片，故demo中使用网络图片替代。开发中用相对路径引用images下的图片
 
 ### 热编译
 
@@ -283,3 +280,4 @@ module.exports = {
 ## License
 
 The MIT License 请自由享受开源。
+

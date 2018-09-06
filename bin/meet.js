@@ -19,7 +19,7 @@ if(fs.existsSync(path.resolve('mg.config.js'))){
 
 // 创建工程
 program
-    .version('2.0.6','-v, --version')
+    .version('1.5.1','-v, --version')
     .usage('[command]')
     .command('init')
     .description('initialize your project')
