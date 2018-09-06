@@ -175,7 +175,7 @@ function generateEntry(options){
 }`);
 
     fs.writeFileSync(entryPath,final,'utf8');
-    console.log(chalk.green(`entrys增加了：`+ addedPage));
+    console.log(chalk.green(`build/modules.js增加了：`+ addedPage));
 
 }
 

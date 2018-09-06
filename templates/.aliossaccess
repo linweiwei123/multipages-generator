@@ -1,0 +1,6 @@
+{
+      "accessKeyId": "xxxx",
+      "accessKeySecret": "xxxx",
+      "bucket": "xxxx",
+      "region": "oss-cn-beijing"
+    }

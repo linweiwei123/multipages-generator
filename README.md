@@ -15,47 +15,45 @@ multipages-generator （MG） 🤡是一个像express-generator一样快速生�
 
 ## 特点
 
-1. 支持webpack编译多页面，可编译指定项目
-2. 使用Node.js，是一个全栈的解决方案
-3. 前端编译支持热更新
-4. 编译出的网页性能经过优化，符合最佳实践（还不完善，后面加入[淘宝性能优化的全部内容](https://github.com/amfe/article/issues/21)）
-5. 支持development,producton环境区分
-6. producton环境可配置生产的css,js,images自动编译后上传OSS服务器
-7. webpack编译后的html模板支持ejs等模板引擎
-8. 支持pm2集群启动
-9. 🔥 (新) 加入[手淘flexible布局方案](https://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)，适配不同尺寸和DPI的屏幕，加入postcss支持
-10. 🔥 (新) 支持生产release模式，配置下七牛云CDN，编译后js，css，图片等资源文件上传cdn
+1. 使用Node.js，是一个JavasScript的全栈的H5解决方案，工程可直接部署
+2. 高效率开发，支持一键创建模块（业务模块）、一键创建新模块、一键编译发布等快捷命令
+3. 工程结构良好划分，结构清晰，可维护。
+4. 支持development,producton环境区分
+5. 支持sass、less、postcss
+6. 开发环境CSS、JS热编译
+7. 文件上传支持阿里OSS，七牛云等
+8. 🔥 (新) 加入[手淘flexible布局方案](https://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)，适配不同尺寸和DPI的屏幕
+9. 支持pm2集群启动
 
 
 ## Document
-* [支持的环境](#支持的环境)
-* [全局安装](#安装)
-* [跑起来！](#运行与开发)
-* [创建一个新项目](#新增一个项目)
-* [示例页面](#示例页面)
+* [全局安装](#全局安装)
+* [创建一个工程](#创建一个工程)
+* [指令介绍](#指令介绍)
+* [新建一个模块](#新建一个模块)
+* [指定模块启动](#指定模块启动)
+* [指定模块编译](#指定模块编译)
+* [上传](#上传说明)
+    * [七牛云CDN](#七牛云cdn)
+    * [阿里云OSS](#阿里云oss)
 * [配置](#配置)
-  * [Release模式上传到CDN](#release模式上传到cdn)
-     * [七牛云CDN](#七牛云cdn)
-     * [阿里云OSS](#阿里云oss)
-     * [其他CDN](#其他cdn)
-* [未来计划](#未来计划)
+* [TodoList](#TodoList)
 
-## 支持的环境
-运行的环境要求
+## 全局安装 ⚙️
+
+### 环境要求
 
 node环境：node.js 6.11.0
 
 操作系统：支持 mac，windows，centos
 
-## 安装 ⚙️
-
-通过NPM全局安装即可使用：
+### 全局安装
 
 ```bash
-npm install multipages-generator -g  //目前已升级至2.0版本，请注意
+npm install multipages-generator -g  //目前最新版本为1.5.x
 ```
 
-## 创建并运行📽
+## 创建一个工程 📽
 
 步骤一：执行multipages-generate创建网站
 ```bash

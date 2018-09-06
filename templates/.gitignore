@@ -64,5 +64,4 @@ typings/
 dist/
 dest/
 public/
-.aliossaccess
 package-lock.json
