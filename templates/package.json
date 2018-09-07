@@ -59,8 +59,7 @@
     "webpack": "^4.17.1",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-dev-middleware": "^3.2.0",
-    "webpack-hot-middleware": "^2.22.3",
-    "webpack-md5-hash": "0.0.6"
+    "webpack-hot-middleware": "^2.22.3"
   },
   "keywords": [],
   "author": "",

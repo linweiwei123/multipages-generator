@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
-const WebpackMd5Hash = require('webpack-md5-hash');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -106,7 +105,7 @@ module.exports = {
       cacheGroups: {
         vendor: {
           name: 'vendor', // 与 output.filename 一致, 即为 'vendor.[chunckhash:8].js'
-          chunks: 'initial',
+          chunks: 'all',
           test: /node_modules/,
           enforce: true
         }
@@ -166,7 +165,6 @@ if (isDev) {
   };
 
   module.exports.plugins.push(
-    new WebpackMd5Hash(), // 结合 chunkhash 使用, 只改变修改的 js/css 文件的 hash 值, 使得未改动的 js/css 文件其打包后的 hash 较上一版本不变
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css',
       chunkFilename: '[id].[contenthash:8].css'
