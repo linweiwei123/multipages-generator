@@ -146,7 +146,7 @@ meet start demo
 
 JS、CSS支持热编译，HTML需要刷新
 
-![image](http://oflt40zxf.bkt.clouddn.com/HRM.gif)
+![image](http://cnd.yintage.com/HRM.gif)
 
 生成的html文件中有如下两处标记，用来热编译用。无需担心，编译阶段会删除。
 
@@ -197,20 +197,20 @@ Entrypoint index = index.12969e6e.css index.080a1e3d.js
 Upload dist files to Qiniu CDN：
 Webpack Bundle Analyzer is started at http://127.0.0.1:8888
 Use Ctrl+C to close it
-[Success]: 上传文件至七牛云CDN成功！文件地址:http://oflt40zxf.bkt.clouddn.com/index.080a1e3d.js
-[Success]: 上传文件至七牛云CDN成功！文件地址:http://oflt40zxf.bkt.clouddn.com/index.12969e6e.css
+[Success]: 上传文件至七牛云CDN成功！文件地址:http://cnd.yintage.com/index.080a1e3d.js
+[Success]: 上传文件至七牛云CDN成功！文件地址:http://cnd.yintage.com/index.12969e6e.css
 [Success]: 上传完毕 😊!
 Use Ctrl+C to close it
 
 ```
 编译后分析会调用webpack插件显示每个js，css的依赖情况
 
-![image](http://oflt40zxf.bkt.clouddn.com/build.png)
+![image](http://cnd.yintage.com/build.png)
 
 ### meet analyse
 通过meet analyse 查看占比
 
-![image](http://oflt40zxf.bkt.clouddn.com/chart.png)
+![image](http://cnd.yintage.com/chart.png)
 
 ## 上传
 
@@ -252,7 +252,7 @@ module.exports = {
             ACCESS_KEY: 'ei1uOdGpVLliA7kb50sLcV9i4wfYLPwt5v0shU10',
             SECRET_KEY: '-pFFIY-ew35Exyfcd67Sbaw40k15ah3UfZTFWFKF',
             bucket:'hotshots-image',
-            origin:'http://oflt40zxf.bkt.clouddn.com'
+            origin:'http://cnd.yintage.com'
         },
 
         // 是否编译后自动上传

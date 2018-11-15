@@ -10,7 +10,7 @@ module.exports = {
 
     // 上传相关配置
     upload: {
-        cdn: '//oflt40zxf.bkt.clouddn.com/',
+        cdn: '//cnd.yintage.com/',
         projectPrefix: 'nodejs-common',
 
         // 如果是阿里云，则aliconfig配置一个空对象，目前采用.aliossacess 文件配置的方式
@@ -23,7 +23,7 @@ module.exports = {
             ACCESS_KEY: 'ei1uOdGpVLliA7kb50sLcV9i4wfYLPwt5v0shU10',
             SECRET_KEY: '-pFFIY-ew35Exyfcd67Sbaw40k15ah3UfZTFWFKF',
             bucket:'hotshots-image',
-            origin:'http://oflt40zxf.bkt.clouddn.com'
+            origin:'http://cnd.yintage.com'
         },
 
         // 是否编译后自动上传
