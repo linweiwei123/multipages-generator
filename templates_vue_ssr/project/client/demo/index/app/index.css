@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    background-color: aliceblue;
+}
+
+h1,h2{
+    margin: 0;
+}
+
+.container{
+    background-color: #FF9800;
+}

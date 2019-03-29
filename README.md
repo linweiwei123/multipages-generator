@@ -15,12 +15,13 @@ multipages-generator （MG） 🤡是一个像express-generator一样快速生�
 1. 使用Node.js，是一个JavasScript的全栈的H5解决方案，工程可直接部署
 2. 高效率开发，支持一键创建模块（业务模块、一键编译发布、上传、生产代码分析等快捷命令
 3. 工程结构良好划分，结构清晰，可维护。
-4. 支持development,producton环境区分
-5. 支持sass、less、postcss
-6. 开发环境CSS、JS热编译
-7. 文件上传支持阿里OSS，七牛云等
-8. 🔥 (新) 加入[手淘flexible布局方案](https://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)，适配不同尺寸和DPI的屏幕
-9. 支持pm2集群启动
+4. 🔥 (新) 支持无Vue SSR 与无框架的模板
+5. 支持development,producton环境区分
+6. 支持sass、less、postcss
+7. 开发环境CSS、JS热编译
+8. 文件上传支持阿里OSS，七牛云等
+9. 加入[手淘flexible布局方案](https://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)，适配不同尺寸和DPI的屏幕
+10. 支持pm2集群启动
 
 
 ## Document
@@ -52,10 +53,21 @@ npm install multipages-generator -g  //目前最新版本为1.5.x
 
 ## 创建一个工程 📽
 
+初始化工程
 ```bash
 meet init
 ```
 
+选择模板：
+- No JavaScript framework 为无框架的模板，可以自行选择需要的开发框架，jQuery，zepto，vue，react等
+- Vue width SSR  为选择Vue框架的版本，默认带了SSR
+```bash
+? Select your JavaScript framework (Use arrow keys)
+❯ No JavaScript framework 
+  Vue width SSR 
+```
+
+完成了项目创建，提示运行
 ```bash
 C:\xxx\workspace>meet init
 ? Project name: h5-project
@@ -92,7 +104,7 @@ C:\xxx\workspace>meet -help
   Commands:
 
     init                          initialize your project
-    new [module]/[module]-[page]  generate a new module
+    new [module]/[module]-[page]  generate_native a new module
     start [module]                start application in development mode
     build [module]                build a module using webpack
     upload                        upload dist files to CDN

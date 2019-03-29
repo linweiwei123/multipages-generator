@@ -14,6 +14,15 @@ const QUESTIONS = [
             if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
             else return 'Project name may only include letters, numbers, underscores and hashes.';
         }
+    },
+    {
+        name: 'project-type',
+        type: 'list',
+        message: 'Select your JavaScript framework',
+        choices:[
+            'No JavaScript framework',
+            'Vue width SSR'
+        ]
     }
 ];
 
@@ -70,7 +79,8 @@ module.exports = function(){
     inquirer.prompt(QUESTIONS)
         .then(answers => {
             projectName = answers['project-name'];
-            const templatePath = path.join(__dirname,'../../','templates');
+            let templateDir = getTemplateDir(answers['project-type']);
+            const templatePath = path.join(__dirname,'../../',templateDir);
 
             fs.mkdirSync(`${CURR_DIR}/${projectName}`);
 
@@ -78,3 +88,13 @@ module.exports = function(){
             createDirectoryContents(templatePath, projectName);
         });
 };
+
+function getTemplateDir(templateType) {
+    let templateDir = '';
+    switch (templateType) {
+        case 'No JavaScript framework': templateDir = 'templates_no_framework'; break;
+        case 'Vue width SSR': templateDir = 'templates_vue_ssr/project'; break;
+        default : templateDir = 'templates_no_framework'; break
+    }
+    return templateDir;
+}

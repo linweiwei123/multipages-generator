@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+}
+
+h1,h2{
+    margin: 0;
+}
+
+.container{
+    background-color: #FF9800;
+}

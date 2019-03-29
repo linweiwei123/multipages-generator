@@ -1,0 +1,14 @@
+{
+  "apps":[{
+    "script"   : "app.js",
+    "instances": "4",
+    "exec_mode": "cluster",
+    "watch"  : true,
+    "env"    :{
+      "ENV": "prod"
+    },
+    "env_production":{
+      "ENV": "prod"
+    }
+  }]
+}
