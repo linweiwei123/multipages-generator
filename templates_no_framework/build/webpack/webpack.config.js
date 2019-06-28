@@ -173,7 +173,7 @@ if (isDev) {
         setting: true
     }),
     new BundleAnalyzerPlugin({
-        analyzerMode: 'server'
+        analyzerMode: 'static'
     })
   );
 }

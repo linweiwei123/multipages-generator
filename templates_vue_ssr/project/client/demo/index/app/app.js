@@ -12,8 +12,8 @@ export function createApp(store) {
     });
 
     if (isBrowser()) {
-        const eruda = require('eruda');
-        eruda.init();
+        // const eruda = require('eruda');
+        // eruda.init();
         const VueAwesomeSwiper = require('vue-awesome-swiper/dist/ssr')
         Vue.use(VueAwesomeSwiper)
     }

@@ -6,6 +6,27 @@ const chalk = require('chalk');
 const modulePage = process.argv[3] || '';
 
 const CSS = `@import url('../../common/css/base.css');
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    color: #4fc08d;
+    font-weight: bold;
+}
+
 `;
 
 var HTML = '';
@@ -36,7 +57,8 @@ function generate_native(){
   <link rel="stylesheet" data-hr="hot-reload" href="/${options.module}/styles/index.css">
 </head>
 <body>
-  <%= data %>
+
+  <div class="container"><%= data %></div>
   
   <!--@hot-reload, will auto remove after compiled-->
   <script type="text/javascript" data-hr="hot-reload" src="/common/js/hot-reload.js"></script>
@@ -164,7 +186,7 @@ function generateRouteIndex(options) {
 }
 
 function generateEntry(options){
-    const entryPath = path.resolve('build/modules-client.js');
+    const entryPath = path.resolve('build/modules.js');
     let content = fs.readFileSync(entryPath,'utf8');
     let addedPage =  `'${options.module}/js/${options.page}.js'`;
     let final = content.replace(`

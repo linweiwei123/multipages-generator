@@ -6,9 +6,10 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const { VueLoaderPlugin } = require('vue-loader')
+const ErudaWebapckPlugin = require('eruda-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader');
 const mgConfig = require(path.resolve('mg.config.js'));
-const { readClientEntrys } = require('../libs/utils')
+const { readClientEntrys } = require('../libs/utils');
 
 // 编译的参数
 const argvStr = process.argv.slice(-1)[0];
@@ -143,7 +144,8 @@ if (isDev) {
   module.exports.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new ErudaWebapckPlugin()
   );
 } else {
   // 预发/生产模式
@@ -177,7 +179,7 @@ if (isDev) {
 
   module.exports.plugins.push(
     new BundleAnalyzerPlugin({
-        analyzerMode: 'server'
+        analyzerMode: 'static'
     })
   );
 }

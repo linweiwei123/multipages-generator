@@ -1,73 +1,75 @@
-English | [中文](./README-zh.md)
+[English](./README.md) | 中文
 
 multipages-generator [![NPM version](https://badge.fury.io/js/multipages-generator.png)](http://badge.fury.io/js/multipages-generator)
 ======
 
 [![NPM](https://nodei.co/npm/multipages-generator.png?downloads=true&stars=true)](https://nodei.co/npm/multipages-generator)
 
-multipages-generator is a multiple pages application generator (or CLI) for mobile. It has the whole DevOps which includes development, build, publish and the deployment. It is One-stop solution for mobile H5.
+multipages-generator （MG） 🤡是一个像express-generator一样快速生成网站开发脚手架的npm模块，完整的移动端h5解决方案，快速、高效、良好兼容性、高性能。
 
-## Scene
-Multipages-generator suite for multipages website whatever is mobile website or PC website, H5 in hybird app. For example: [this](http://www.ih5.cn/not-logged-in/template), [chiji game](https://uedkit.meiyou.com/annualmeeting/game/).
+## 适合场景
+如美柚，淘宝，今日头条，微信内分享的等独立的，小的h5，可以是广告，营销，活动，展示页，秀肌肉，好玩的h5，如[这些](http://www.ih5.cn/not-logged-in/template)。
+还有我们的例子：
+[美柚吃鸡游戏](https://uedkit.meiyou.com/annualmeeting/game/)
 
-## Feature
-1. One-stop mobile MPA solution with modern web technologys like Nodejs, webpack4, babel, Vue with server side rendering. 
-2. Efficient commands like new, develop,build,upload,analysis,deploy.
-3. Best practices for architechure and organization.
-4. 🔥 (new) Support Vue SSR and no framework or any other framework you like.
-5. Support development,producton ENV.
-6. Support sass、less、postcss
-7. Hot code reload for CSS and JS
-8. Support upload to Ali OSS and Qiniu OSS
-9. Support mobile adaptation with [taobao flexible layout solution](https://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)，fit different screen size and DPI.
-10. Support pm2 deployment
+## 特点
+
+1. 使用Node.js，是一个JavasScript的全栈的H5解决方案，工程可直接部署
+2. 高效率开发，支持一键创建模块（业务模块、一键编译发布、上传、生产代码分析等快捷命令
+3. 工程结构良好划分，结构清晰，可维护。
+4. 🔥 (新) 支持Vue SSR 与无框架的模板
+5. 支持development,producton环境区分
+6. 支持sass、less、postcss
+7. 开发环境CSS、JS热编译
+8. 文件上传支持阿里OSS，七牛云等
+9. 加入[手淘flexible布局方案](https://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)，适配不同尺寸和DPI的屏幕
+10. 支持pm2集群启动
 
 
 ## Document
-* [Global install](#global-install)
-* [Create a project](#create-a-project)
-* [Commands](#commands)
-* [Create a new module](#create-a-new-module)
-* [Develop a module](#develop-a-module)
-* [Build a module](#build-a-module)
-* [Upload](#upload)
-    * [Qiniu OSS](#qiniu-oss)
-    * [Ali OSS](#ali-oss)
-* [Config](#config)
+* [全局安装](#全局安装)
+* [创建一个工程](#创建一个工程)
+* [指令介绍](#指令介绍)
+* [新建一个模块](#新建一个模块)
+* [指定模块启动](#指定模块启动)
+* [指定模块编译](#指定模块编译)
+* [上传](#上传)
+    * [七牛云CDN](#七牛云cdn)
+    * [阿里云OSS](#阿里云oss)
+* [配置](#配置)
 * [TodoList](#TodoList)
 
-## Global install ⚙️
+## 全局安装 ⚙️
 
-### Envirment requirement
+### 环境要求
 
-NodeJS: >= 6.11.0
+node环境：node.js 6.11.0
 
-OS: MacOS,windows,centos
+操作系统：支持 mac，windows，centos
 
-### install
+### 全局安装
 
 ```bash
-npm install multipages-generator -g  //now the latest is 1.6.x
+npm install multipages-generator -g  //目前最新版本为1.5.x
 ```
 
-## Create a project 📽
+## 创建一个工程 📽
 
-### init a project
+初始化工程
 ```bash
 meet init
 ```
 
-### Choose a template:
-- No JavaScript framework (You can add your framework like jQuery，zepto，vue，react and so on.)
-- Vue width SSR (It's add SSR default for now)
+选择模板：
+- No JavaScript framework 为无框架的模板，可以自行选择需要的开发框架，jQuery，zepto，vue，react等
+- Vue width SSR  为选择Vue框架的版本，默认带了SSR
 ```bash
 ? Select your JavaScript framework (Use arrow keys)
 ❯ No JavaScript framework 
   Vue width SSR 
 ```
 
-### start 
-When initialized, install the dependencis and start the demo
+完成了项目创建，提示运行
 ```bash
 C:\xxx\workspace>meet init
 ? Project name: h5-project
@@ -89,9 +91,8 @@ C:\xxx\workspace>meet init
 
 ```
 
-## Commands
-Use meet -help to show all the commands.
-
+## 指令介绍
+查看指令帮助 meet -help
 ```bash
 C:\xxx\workspace>meet -help
 
@@ -113,55 +114,43 @@ C:\xxx\workspace>meet -help
     git                           auto git commit and push
 
 ```
+注意，创建模块使用meet new [module]，如果是在该模块下创建其他页面，则使用meet new [module]-[page]。举例：在demo下创建一个详情页面detail.html 使用 meet new demo-detail
 
-## Create a new module
+## 新建一个模块
 
 meet new [module]/[module]-[page]
 
-### Description
-Attention, create a new module use like this
-```
-meet new [module]
-```
-When you need to create a new page in the existed module, use this command:
-```
-meet new [module]-[page]
-```
-
-### For a example, create a game H5(module)
-
 ```bash
-meet new game  // create a game with default page index.html
+meet new game  // 创建游戏模块（默认index页面）   
 ```
-Because it's so called multiple pages generator, so create another page use this:
+由于是多页面的，所以你可能还会创建一个详情页面
 ```
-meet new game-detail // create the game detail.html in the game module
+meet new game-detail // 创建游戏模块下的详情页面
 ```
 
-And you got a list files like this:
+得到一个文件结构
 ```bash
 game
- ├─images // this is no images, just a dictory
+ ├─images // 由于没有文件，可能不会创建，开发者自行创建images
  ├─js
  | ├─index
- | | ├─business.js  // the business js(Expand as you wish)
- | | ├─service.js   // http service code
- | | └─util.js      // utils code
- | └─index.js       // the main js file
+ | | ├─business.js  // 具体业务层（可根据业务复杂度再细分）
+ | | ├─service.js   // 数据处理层
+ | | └─util.js      // 工具类函数层
+ | └─index.js       // 主逻辑层
  ├─styles
- | └─index.css      // css code
+ | └─index.css      // css
  └─views
-   └─index.html     // html code
+   └─index.html     // html源文件
 ```
 
-## Develop a module
+## 指定模块启动
 ### meet start [module]
 
 ```
 meet start demo
 ```
-
-It started with this followed, you can choose a link to open in browser.
+启动后会出现如下显示，可点击相应的地址访问
 ```
  √ Build done
 
@@ -170,17 +159,15 @@ It started with this followed, you can choose a link to open in browser.
 
 ```
 
-Attention:
-Vue CSR: http://localhost:8080/demo/?csr=true
-Vue SSR: http://localhost:8080/demo/
+注意： Vue CSR: http://localhost:8080/demo/?csr=true
 
-### Hot reload
+### 热编译
 
-JS、CSS support hot code reload，HTML changes need man to refresh the browser.
+JS、CSS支持热编译，HTML需要刷新
 
 ![image](http://cnd.yintage.com/HRM.gif)
 
-Html generated contain two marker, you don't need to worry about this. It's for better development and will removed when in build.
+生成的html文件中有如下两处标记，用来热编译用。无需担心，编译阶段会删除。
 
 ```html
 <!DOCTYPE html>
@@ -192,14 +179,14 @@ Html generated contain two marker, you don't need to worry about this. It's for 
   <link rel="stylesheet" data-hr="hot-reload" href="/demo/styles/index.css">
 </head>
 <body>
-  <div>you content...</div>
+  <div>内容...</div>
   <!--@hot-reload, will auto remove after compiled-->
   <script type="text/javascript" data-hr="hot-reload" src="/common/js/hot-reload.js"></script>
 </body>
 </html>
 ```
 
-## Build a module
+## 指定模块编译
 
 ### meet build [demo]
 
@@ -235,55 +222,51 @@ Use Ctrl+C to close it
 Use Ctrl+C to close it
 
 ```
-After analysis powerd by webpack plugin, the page will show the code proportion.
+编译后分析会调用webpack插件显示每个js，css的依赖情况
 
 ![image](http://cnd.yintage.com/build.png)
 
 ### meet analyse
-
-Use this command after builded.
-
-```
-meet analyse
-```
+通过meet analyse 查看占比
 
 ![image](http://cnd.yintage.com/chart.png)
 
-## Upload
+## 上传
 
 ### meet upload
-Upload the files which in the dist dictory to OSS server. Config the Ali OSS or Qiniu OSS configs in mg.config.js.
+上传的是dist文件夹中的文件，配置阿里云，七牛云请看mg.config.js
 ```bash
 meet upload
 ```
 
-## Config
+## 配置
 ### mg.config.js
+MG目前支持发布时自动,支持阿里OSS、七牛云
 
-mg.config.js is look like:
+mg.config.js 中有如下配置
 
 ```
 module.exports = {
 
-    // the client server (use for hot reload ) port
+    // 启动的客户端服务器端口
     clientPort: '8080',
 
-    // the server(for deployment) port
+    // 服务端服务器端口
     server: {
         port: '8090',
     },
 
-    // upload config
+    // 上传相关配置
     upload: {
         cdn: '//oflt40zxf.bkt.clouddn.com/',
         projectPrefix: 'nodejs-common',
 
-        // if use Ali OSS，set aliconfig a empty object, now it support Ali CLI for upload, 
+        // 如果是阿里云，则aliconfig配置一个空对象，目前采用.aliossacess 文件配置的方式
         // aliconfig: {
         //
         // },
-       
-        // Qiniu OSS
+        // 七牛云
+
         qconfig: {
             ACCESS_KEY: 'ei1uOdGpVLliA7kb50sLcV9i4wfYLPwt5v0shU10',
             SECRET_KEY: '-pFFIY-ew35Exyfcd67Sbaw40k15ah3UfZTFWFKF',
@@ -291,7 +274,7 @@ module.exports = {
             origin:'http://cnd.yintage.com'
         },
 
-        // is auto upload after build
+        // 是否编译后自动上传
         autoUpload: true
 
     }
@@ -299,17 +282,21 @@ module.exports = {
 
 ```
 
-[Ali OSS upload](https://www.npmjs.com/package/meetyou-ali-oss)
-
 ## Todo List
-1. Better Vue SSR solution
-2. Support react, react-ssr
+1. 更好的支持Vue SSR，类似nuxt
+2. 支持react， react-ssr
 
-## deployment 
-[deploy to server in 30 minutes](http://medium.yintage.com/?p=248)
+## Contribution
+
+[吴俊川](https://github.com/wujunchuan)
+
+感谢俊川提供的热更新方案的建议，以及对项目某些细节的改进
+
+## 配套部署方案请参考
+[30分钟快速部署到云服务器上](http://medium.yintage.com/?p=248)
 
 
 ## License
 
-The MIT License 
+The MIT License 请自由享受开源。
 

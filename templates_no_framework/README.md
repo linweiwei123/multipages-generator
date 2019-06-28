@@ -3,10 +3,10 @@
 npm install
 
 # 启动
-npm run dev:demo
+npm run start demo
 
 ## 发布
-npm run release:demo
+npm run build demo
 
 # pm2启动
 pm2 start process.json
