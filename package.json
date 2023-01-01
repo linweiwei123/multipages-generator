@@ -37,6 +37,6 @@
     "meetyou-ali-oss": "^1.0.7",
     "qn": "^1.3.0",
     "shelljs": "^0.8.2",
-    "webpack": "^4.17.1"
+    "webpack": "^5.75.0"
   }
 }
